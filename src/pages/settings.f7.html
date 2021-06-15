@@ -1,0 +1,364 @@
+<template>
+<!-- evt. brauche ich eine aufgeklapptes Accordion-->
+<div class="page" data-name="settings">
+
+  <!-- Appbar -->
+  <div class="appbar">
+    <div class="appbar-inner">
+      <div class="left">
+        <b>{{title}}</b>
+
+
+      </div>
+
+      <div class="right">   
+ 
+        </div>
+    </div>
+  </div>
+
+
+    <div class="page-content">
+
+
+        <div class="block-title">Karte</div>
+        <div class="list simple-list">
+        <ul>
+
+            <!-- <li>
+            <span>OpenStreetMap Grundkarte</span>
+            <label class="toggle toggle-init toggle-settings-osm">
+                <input type="checkbox"  id="toggle-settings-osm">
+                <span class="toggle-icon"></span>
+            </label>
+            </li> -->
+
+            <li>
+                <span>Höhenlinien (Dresden-Plauen)</span>
+                <label class="toggle toggle-init toggle-settings-ele">
+                <input type="checkbox" id="toggle-settings-ele">
+                <span class="toggle-icon"></span>
+                </label>
+            </li>
+
+            <!-- <li>
+                <span>Alle Routen</span>
+                <label class="toggle toggle-init toggle-settings-rou">
+                <input type="checkbox" id="toggle-settings-rou">
+                <span class="toggle-icon"></span>
+                </label>
+            </li> -->
+
+            <!-- <li>
+                <span>essbare Objekte</span>
+                <label class="toggle toggle-init toggle-settings-ess">
+                <input type="checkbox" id="toggle-settings-ess">
+                <span class="toggle-icon"></span>
+                </label>
+            </li> -->
+
+            <!-- <li>
+                <span>Point of Interests</span>
+                <label class="toggle toggle-init toggle-settings-poi">
+                <input type="checkbox" id="toggle-settings-poi">
+                <span class="toggle-icon"></span>
+                </label>
+            </li> -->
+
+            <!-- <li>
+                <span>statistische Bezirke</span>
+                <label class="toggle toggle-init toggle-settings-bez">
+                <input type="checkbox" id="toggle-settings-bez">
+                <span class="toggle-icon"></span>
+                </label>
+            </li> -->
+
+
+        </ul>
+        </div>
+
+
+
+        <div class="block-title">Standort</div>
+        <div class="list simple-list">
+        <ul>
+
+            <li>
+            <span>eigenen Standort verwenden</span>
+            <label class="toggle toggle-init toggle-settings-standort">
+                <input type="checkbox"  id="toggle-settings-standort">
+                <span class="toggle-icon"></span>
+            </label>
+            </li>
+
+            <li>
+                <span>eigenen Standort anzeigen</span>
+                <label class="toggle toggle-init toggle-settings-standort-marker">
+                    <input type="checkbox"  id="toggle-settings-standort-marker">
+                    <span class="toggle-icon"></span>
+                </label>
+                </li>
+
+
+
+        </ul>
+        </div>
+        <!-- <div class="div-right">
+            <a href="#" class="link back">
+                <i class="icon icon-back"></i>
+                <span class="if-not-md">Okay</span>
+            </a>
+        </div> -->
+
+        <div class="navbar navbar-large navbar-transparent">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner sliding">
+                <div class="right">
+                <!-- <a href="#" class="link back">
+                    <i class="icon icon-back"></i>
+                    <span class="if-not-md">Okay</span>
+                </a> -->
+                <button @click="closeClick()" class="button button-fill">Okay</button>
+                </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</template>
+<script>
+    export default {
+      
+        data: function () {
+          return {
+            // empty initial data
+            title: 'Einstellungen',
+          }
+        },
+        
+        methods: {
+          onClick: function(e){
+            console.log('CLICKED');
+
+          },
+          closeClick: function(){
+            console.log('close click function');
+            // onClick on Close Button           
+          
+            var self = this;
+            this.$app.views.main.router.back('/', {force: true});        
+          }
+        },
+        
+        
+        on: {
+          pageInit: function () {
+            var self = this;
+            var app = self.$app;
+            var $$ = Dom7;
+            // // request user data on page init
+            // app.request.get(xxx.json', (tours) => {
+
+            // hier eventuell spaeter per Request verschiedene Sprachen fuer die GUI laden... dt, en, ...?
+
+
+          },
+          pageBeforeOut: function () {
+            var self = this;
+            var app = self.$app;
+            var $$ = Dom7;
+            // set Settings vom Toggles to local storage
+            //var toggle = app.toggle.create({ el:'.toggle-settings-osm' });
+            // var toggle = this.toggle.get('.toggle-settings-osm');
+
+            console.log($$('#toggle-settings-osm').prop('checked'))
+
+            if ($$('#toggle-settings-osm').prop('checked') == true) {
+                localStorage.setItem('lyr_osm', 'y');
+            } else {
+                localStorage.setItem('lyr_osm', 'n');
+            }
+
+            // var toggle = app.toggle.get('.toggle-settings-ele');
+            if ($$('#toggle-settings-ele').prop('checked') == true) {
+                localStorage.setItem('lyr_ele', 'y');
+            } else {
+                localStorage.setItem('lyr_ele', 'n');
+            }
+
+            // var toggle = app.toggle.get('.toggle-settings-rou');
+            if ($$('#toggle-settings-rou').prop('checked') == true) {
+                localStorage.setItem('lyr_rou', 'y');
+            } else {
+                localStorage.setItem('lyr_rou', 'n');
+            }
+
+            // // var toggle = app.toggle.get('.toggle-settings-ess');
+            // if ($$('#toggle-settings-ess').prop('checked') == true) {
+            //     localStorage.setItem('lyr_ess', 'y');
+            // } else {
+            //     localStorage.setItem('lyr_ess', 'n');
+            // }
+
+            // // var toggle = app.toggle.get('.toggle-settings-poi');
+            // if ($$('#toggle-settings-poi').prop('checked') == true) {
+            //     localStorage.setItem('lyr_poi', 'y');
+            // } else {
+            //     localStorage.setItem('lyr_poi', 'n');
+            // }
+
+            if ($$('#toggle-settings-bez').prop('checked') == true) {
+                localStorage.setItem('lyr_bez', 'y');
+            } else {
+                localStorage.setItem('lyr_bez', 'n');
+            }
+
+            // var toggle = app.toggle.get('.toggle-settings-poi');
+            if ($$('#toggle-settings-standort').prop('checked') == true) {
+                localStorage.setItem('geol', 'on');
+            } else {
+                localStorage.setItem('geol', 'off');
+            }
+
+
+
+            if ($$('#toggle-settings-standort-marker').prop('checked') == true) {
+                localStorage.setItem('geol_marker', 'y');
+            } else {
+                localStorage.setItem('geol_marker', 'n');
+            }
+
+
+            console.log('page beforeout settings.f7.html');
+
+
+          },
+          pageMounted: function () {
+            var self = this;
+            var app = self.$app;
+            var $$ = Dom7;
+
+            // get Settings from local storage to Toggles 
+            //var toggle = app.toggle.create({ el:'.toggle-settings-osm' });
+            // var toggle = $app.toggle.get('.toggle-settings-osm');
+            if (localStorage.getItem('lyr_osm') == 'y'){
+                // toggle.checked = true;
+                $$('#toggle-settings-osm').prop('checked', true);
+
+            }
+            if (localStorage.getItem('lyr_osm') == 'n'){
+                $$('#toggle-settings-osm').prop('checked', false);
+            }
+
+
+            // var toggle = app.toggle.get('.toggle-settings-ele');
+            if (localStorage.getItem('lyr_ele') == 'y'){
+                $$('#toggle-settings-ele').prop('checked', true);
+
+            }
+            if (localStorage.getItem('lyr_ele') == 'n'){
+                $$('#toggle-settings-ele').prop('checked', false);
+            }
+
+
+            // var toggle = app.toggle.get('.toggle-settings-rou');
+            if (localStorage.getItem('lyr_rou') == 'y'){
+                $$('#toggle-settings-rou').prop('checked', true);
+
+            }
+            if (localStorage.getItem('lyr_rou') == 'n'){
+                $$('#toggle-settings-rou').prop('checked', false);
+            }
+
+
+            // // var toggle = app.toggle.get('.toggle-settings-ess');
+            // if (localStorage.getItem('lyr_ess') == 'y'){
+            //     $$('#toggle-settings-ess').prop('checked', true);
+
+            // }
+            // if (localStorage.getItem('lyr_ess') == 'n'){
+            //     $$('#toggle-settings-ess').prop('checked', false);
+            // }
+
+
+            // // var toggle = app.toggle.get('.toggle-settings-poi');
+            // if (localStorage.getItem('lyr_poi') == 'y'){
+            //     $$('#toggle-settings-poi').prop('checked', true);
+
+            // }
+            // if (localStorage.getItem('lyr_poi') == 'n'){
+            //     $$('#toggle-settings-poi').prop('checked', false);
+            // }
+
+
+            if (localStorage.getItem('lyr_bez') == 'y'){
+                $$('#toggle-settings-bez').prop('checked', true);
+
+            }
+            if (localStorage.getItem('lyr_bez') == 'n'){
+                $$('#toggle-settings-bez').prop('checked', false);
+            }
+
+
+            if (localStorage.getItem('geol') == 'on'){
+                $$('#toggle-settings-standort').prop('checked', true);
+
+            }
+            if (localStorage.getItem('geol') == 'off'){
+                $$('#toggle-settings-standort').prop('checked', false);
+                // disabled geolocation marker setting
+                $$('.toggle-settings-standort-marker').addClass('disabled');
+            }
+            
+
+
+            if (localStorage.getItem('geol_marker') == 'y'){
+                $$('#toggle-settings-standort-marker').prop('checked', true);
+
+            }
+            if (localStorage.getItem('geol_marker') == 'n'){
+                $$('#toggle-settings-standort-marker').prop('checked', false);
+            }
+            
+
+            console.log('page mounted settings --> set toggles');
+
+
+            // settings , if geolocation is unchecked, also marker should be disabled
+
+            $$('#toggle-settings-standort').on('change', function(){
+            console.log('settings - change of geolocation');    
+            
+
+            if ($$('#toggle-settings-standort').prop('checked') == true) {
+                // enable Marker settings for location
+                $$('.toggle-settings-standort-marker').removeClass('disabled');
+                console.log('an');
+            } else {
+                // disable Marker settings for location
+                $$('.toggle-settings-standort-marker').addClass('disabled');
+                console.log('aus');
+            }
+
+
+            });
+
+          },
+
+          pageAfterOut: function () {
+            var self = this;
+            var app = self.$app;
+            var $$ = Dom7;
+            
+            // after settings closed, updateMap based on new values in localstorage
+            updateMap();
+
+          },
+        },          
+      
+    }
+</script>
+
+

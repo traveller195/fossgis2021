@@ -1,0 +1,120 @@
+<template>
+<!-- evt. brauche ich eine aufgeklapptes Accordion-->
+<div class="page" data-name="impressum">
+
+  <!-- Appbar -->
+  <div class="appbar">
+    <div class="appbar-inner">
+      <div class="left">
+        <b>{{title}}</b>
+
+      </div>
+
+      <div class="right">   
+        
+      </div>
+    </div>
+  </div>
+
+
+    <div class="page-content">
+      <div class="block block-strong">
+        <!-- important: only block, not block-title for text!!! -->
+        <p class="block">
+          <p>siehe</p>
+          <!-- <a target="_blank" href="https://essbarer-stadtteil.de/impressum-datenschutz/">https://essbarer-stadtteil.de/impressum-datenschutz/</a>  -->
+          <a target="_blank" class="link external" href="https://essbarer-stadtteil.de/impressum-datenschutz/">https://essbarer-stadtteil.de/impressum-datenschutz/</a>
+
+        </p>
+      </div>
+       
+
+
+        <div class="navbar navbar-large navbar-transparent">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner sliding">
+                <div class="right">
+                <!-- <a href="#" class="link back">
+                    <i class="icon icon-back"></i>
+                    <span class="if-not-md">Okay</span>
+                </a> -->
+                <button @click="closeClick()" class="button button-fill">Okay</button>
+                </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</template>
+<script>
+    export default {
+      
+        data: function () {
+          return {
+            // empty initial data
+
+            title: 'Impressum',
+          }
+        },
+        
+        methods: {
+          onClick: function(e){
+            console.log('CLICKED');
+
+          },
+          closeClick: function(){
+            console.log('close click function');
+            // onClick on Close Button           
+          
+            var self = this;
+            this.$app.views.main.router.back('/', {force: true});
+        
+          }
+        },
+        
+        
+        on: {
+          pageInit: function () {
+            var self = this;
+            var app = self.$app;
+            var $$ = Dom7;
+            // // request user data on page init
+            // app.request.get(xxx.json', (tours) => {
+
+            // hier eventuell spaeter per Request verschiedene Sprachen fuer die GUI laden... dt, en, ...?
+
+
+          },
+          pageBeforeOut: function () {
+            var self = this;
+            var app = self.$app;
+            var $$ = Dom7;
+
+            console.log('page beforeout impressum.f7.html');
+
+
+          },
+          pageMounted: function () {
+            var self = this;
+            var app = self.$app;
+            var $$ = Dom7;           
+
+            console.log('page mounted impressum');
+
+
+          },
+
+          pageAfterOut: function () {
+            var self = this;
+            var app = self.$app;
+            var $$ = Dom7;
+
+          },
+        },     
+      
+    }
+</script>
+
+

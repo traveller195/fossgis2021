@@ -1,0 +1,878 @@
+<template>
+
+<!-- Initial Page, "data-name" contains page name -->
+<div class="page" data-name="home">
+  <!-- APPBAR  -->
+
+
+  <!-- Appbar -->
+  <div class="appbar">
+    <div class="appbar-inner">
+      <div class="left">
+  <!--   <a href="#" class="link icon-only panel-toggle display-flex" data-panel=".panel-left"> -->
+        <a href="#" class="link icon-only panel-open btn_menu" data-panel=".panel-left">
+          <i class="f7-icons">bars</i>
+        </a>
+      </div>
+
+      <!-- <div class="right" id="place-for-button">
+
+      </div> -->
+
+      <div class="right right-appbar">   
+        
+        <!-- <a class="button panel-open" href="#" data-panel=".panel-left">Open Left Panel</a> -->
+        <!-- <a href="#" class="link panel-open" data-panel="left">Left Panel</a> -->
+
+
+
+        <!-- BUTTON to Close active route if it is open/on -->
+        {{#js_if "this.route_state == 'on'"}}
+        <a @click="closeActiveRoute()" href="#" class="link icon-only btn_route_close" id="btn_route_close">
+          <i class="f7-icons color-yellow">xmark_octagon_fill</i>
+        </a>
+        {{/js_if}}
+
+        <!-- later, the button for Geolocation on/off must be added here -->
+
+        {{#js_if "this.geol == 'off'"}}
+        <a @click="setGeolocation()" href="#" class="link icon-only btn_geolocation">
+          <i class="f7-icons">location_slash</i>
+        </a>
+        {{/js_if}}
+
+        {{#js_if "this.geol == 'on'"}}
+        <a @click="setGeolocation()" href="#" class="link icon-only btn_geolocation">
+          <i class="f7-icons">location</i>
+        </a>
+        {{/js_if}}
+
+        {{#js_if "this.geol_follow_me == 'y'"}}
+        <a @click="dummy_setGPS_Follow_Me()" href="#" class="link icon-only btn_geolocation">
+          <i class="f7-icons">scope</i>
+        </a>
+        {{/js_if}}
+
+        {{#js_if "this.geol_follow_me == 'n'"}}
+        <a @click="dummy_setGPS_Follow_Me()" href="#" class="link icon-only btn_geolocation">
+          <i class="f7-icons">arrowshape_turn_up_right</i>
+        </a>
+        {{/js_if}}
+
+
+
+        <!-- <a href="/test_route/" class="link icon-only btn_geolocation">
+          T
+        </a> -->
+
+        <!-- <a href="#" class="link icon-only panel-open btn_zoom_gps" data-panel=".panel-left">
+          <i class="f7-icons">placemark</i>
+        </a> -->
+
+        <a @click="zoom_to_aoi_arrow()" href="#" class="link icon-only btn_zoom_aoi">
+          <i class="f7-icons">house</i>
+        </a>
+        
+        <!-- <div class="searchbar searchbar-inline">
+          <div class="searchbar-input-wrap">
+            <input type="text" placeholder="Search app">
+            <i class="searchbar-icon"></i>
+            <div class="input-clear-button"></div>
+          </div>
+        </div> -->
+
+      </div>
+    </div>
+  </div>
+
+
+  {{#js_if "this.map_refresh > 0"}}
+  <!-- Scrollable page content -->
+  <div class="page-content page-content-map">
+    <!-- OpenLayers Kartenfeld-->
+    <div id="map" class="map map-main"></div>
+  </div>
+  {{/js_if}}
+
+
+  <!-- Footer for Route -->
+  {{#js_if "this.route_state == 'on'"}}
+  <!-- Toolbar / Tabbar? / Swiper -->
+  <div class="toolbar tabbar tabbar-scrollable toolbar-bottom my_footer">
+
+    <div class="my_tabbar">
+      <!-- ROW TOP -->
+      <!-- currently this top row is not visible in the app!! see CSS rules -->
+
+      <div class="toolbar-inner row-top">
+        <a @click="swiper_slidePrev()" href="#" class="tab-link toolbar-top-notcenter-field">
+          <!-- Different icons for iOS and MD themes -->
+          <i class="icon f7-icons color-yellow if-not-md">arrowtriangle_left_fill</i>
+          <!-- <i class="icon material-icons md-only">email</i> -->
+          <!-- Label text -->
+          <!-- <span class="tabbar-label">Inbox</span> -->
+        </a>
+        <a @click="open_SheetModal())" href="#" class="tab-link tab-link-active toolbar-top-center-field">
+          <!-- <i class="icon f7-icons if-not-md">xmark_octagon_fill</i> -->
+          <!-- <i class="icon material-icons md-only">today</i> -->
+          <!-- <span class="tabbar-label">Calendar</span> -->
+
+          <!-- weitere Infos -->
+          Klicke hier!
+        </a>
+        <a @click="swiper_slideNext()" href="#" class="tab-link toolbar-top-notcenter-field">
+          <i class="icon f7-icons color-yellow if-not-md">arrowtriangle_right_fill</i>
+          <!-- <i class="icon material-icons md-only">file_upload</i> -->
+          <!-- <span class="tabbar-label">Upload</span> -->
+        </a>
+      </div>
+
+    </div>
+
+    <!-- ROW BOTTOM -->
+    <div class="toolbar-inner row-bottom">
+
+      <!--  swiper  -->
+      <!-- SWIPER SLIDER -->
+      <!-- see also: https://swiperjs.com/demos/ -->
+      <!--  also here: https://framework7.io/docs/swiper.html -->        
+
+      <div data-pagination='{"el": ".swiper-pagination"}' data-space-between="10" data-slides-per-view="auto" class="swiper-stations swiper-container demo-swiper">
+
+        <div class="swiper-wrapper" id ="swiper-wrapper-route">
+          {{#each stations}}
+          <div @click="open_SheetModal())" data-id="{{this.order}}" class="swiper-slide slide-route link">{{this.title_short}}</div>
+                        <!-- <div  @click="slideClick({{this.order}})" class="swiper-slide"><div class="block">Station {{this.order}} <p style="font-size:10px;text-align: center;margin-top: 0;">{{this.title}}</p></div></div> -->
+          {{/each}}
+
+          <!-- last item for closing route modus -->
+          <div  @click="closeActiveRoute()" data-id="close" class="swiper-slide slide-route link"><p style="font-size:10px;text-align: center;color:red;">Route verlassen</p></div>
+            
+
+        </div>
+        
+
+        <!-- Add Pagination -->
+        <div class="swiper-pagination">
+          <!-- {{#each stations}}
+          <span class="swiper-pagination-bullet"></span>
+          {{/each}}                           -->
+        </div>
+
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>        
+
+  </div>
+  {{/js_if}}
+  
+
+  <!-- SHEET MODAL -->
+  <div class="sheet-modal sheet-station" data-close-by-outside-click="false" data-close-by-backdrop-click="false" data-backdrop="false" style="height:40%; --f7-sheet-bg-color: #fff;">
+    <div class="toolbar">
+      <div class="toolbar-inner">
+        <div class="left insert_min_max">
+          {{#js_if "this.sheet_modal_height == 50"}}
+          <a @click="Sheet_Height(100)" class="link sheet-max-min" href="#"><i class="icon f7-icons color-yellow if-not-md">arrowtriangle_up_fill</i></a>
+          {{/js_if}}
+
+          {{#js_if "this.sheet_modal_height == 100"}}
+          <a @click="Sheet_Height(50)" class="link sheet-max-min" href="#"><i class="icon f7-icons color-yellow if-not-md">arrowtriangle_down_fill</i></a>
+          {{/js_if}}
+        </div>
+
+        <!-- title for current station -->
+        <div class="current_station_title" id="current_station_title" style="color: rgba(0, 0, 0, 0.5) !important; font-weight: bold !important; font-size:12px;text-align: center;over-flow:auto;white-space: auto;"></div>
+
+
+        <div class="right"><a class="link sheet-close" href="#"><span style="font-weight: bold !important;color: #ffd102 !important;">X</span></a></div>
+      </div>
+    </div>
+    <div class="sheet-modal-inner">
+      <!-- page content is important for scrollable -->
+      <div class="page-content route-page current_station_content" id="current_station_content">
+        <!-- im p ist margin-top = 0 sehr wichtig!! -->
+        <!-- <p style="font-size:12px;text-align: center;margin-top: 0;">Beschreibung der Station</p> -->
+        <!-- hier kommt evt ein Text Block hin, der bei zu viel Text einen vertikalen Schieber zum scrollen bekommt -->
+
+        
+        <!-- <div class="block block-strong"> -->
+          <!-- important: only block, not block-title for text!!! -->
+          <!-- <p class="block current_station_content" id="current_station_content" style="font-size:10px;margin-top: 0;over-flow:auto;white-space: auto;"></p> -->
+        <!-- </div> -->
+      </div>
+      
+    </div>
+  </div>
+
+</div>
+</template>
+<script>
+    export default {
+    // // how can a handle this code with webpack to bundle it?
+    // // this data function imports JSON content to can be used in this template
+      
+        data: function () {
+          return {
+            // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            // initial data
+            // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+            geol: localStorage.getItem('geol'),
+            geol_follow_me: localStorage.getItem('geol_follow_me'),
+            // data for sheet modal height --> setState for min/max link
+            sheet_modal_height: 50,
+            sheet_modal_opened: false,
+            
+            route_state: localStorage.getItem('route_state'),
+            route_id: localStorage.getItem('route_id'),
+
+            // in order to refresh content of ol map by using setstate (to have better height)
+            map_refresh: 1,
+            
+
+            // empty initial data
+            // data for stations of route/spaziergang
+            stations: null,
+            // data for whole activated route/spaziergang
+            route_data: null,
+
+          }
+        },
+        
+        methods: {
+          // onClick: function(e){
+          //   console.log('CLICKED');
+          // },
+          slideClick: function(nr){
+            var self = this;
+
+            console.log('slideClick(nr) ... ID clicked: ' + nr + ' Var Type: ' + typeof(nr));
+            // onClick on Swiper Item             
+
+            // load content into current station
+            // title
+            document.getElementById("current_station_title").innerHTML = this.stations[nr-1].title_long; 
+
+            // check also if image is existing
+            // var image_prefix = '';
+            // if (this.stations[nr-1].path_image == 'no'){
+            //   image_prefix = '';
+            // } else {
+            //   image_prefix = '<img src="json/' + this.route_id + '/img/' + nr + '.jpg" alt="image" style="display: block; margin-left: auto; margin-right: auto; width: 50%;"><br>';
+
+            // }
+            // document.getElementById("current_station_content").innerHTML = image_prefix + this.stations[nr-1].text;
+
+            // ++++++++++++++++ BUILD STRUCTURE for Accordion, containing all content for this station ++++++++++++++++++++++
+            // build specific structure of 'accordion' for this station
+            let string_accordion = '';
+            
+            // add head of fr7 accordion
+            // by using own CSS rules for styling
+            string_accordion += '<div class="list route-accordion"><ul>';
+
+            // loop over all given content elements (it changes from station to station)
+
+            // index from JSON = 'order' is 1-based
+
+
+            // if Image is existing --> add it to Accordion
+
+            if (this.stations[nr-1].image_path != 'no'){
+
+              let nr_edit = nr;
+              if (nr < 10){
+                nr_edit = '0'+nr;
+              }
+
+              string_accordion += '<li class="accordion-item route-item">';
+              string_accordion += '<a href="#" class="item-content item-link route-category">';
+              string_accordion += '<div class="item-inner">';
+              string_accordion += '<div class="item-title">' + 'Foto' + '</div>';
+              string_accordion += '</div>';
+              string_accordion += '</a>';
+              string_accordion += '<div class="accordion-item-content route-content">';
+              string_accordion += '<div class="block">';
+              string_accordion += '<p style="text-align: center !important;">';
+              string_accordion += '<img src="json/' + this.route_id + '/img/' + nr_edit + '.jpg" alt="image" style="display: block; margin-left: auto; margin-right: auto; width: 100%;">';
+              string_accordion += '<br>';
+              string_accordion += '<span>' + this.stations[nr-1].image_text + '</span>';              
+              
+              string_accordion += '</p>';
+              string_accordion += '</div>';
+              string_accordion += '</div>';
+              string_accordion += '</li>';
+
+
+            }
+
+
+            // console.log(this.stations[nr-1].content[key]);
+
+            for (var key in this.stations[nr-1].content) {
+              if (this.stations[nr-1].content.hasOwnProperty(key)) {
+ 
+                console.log(this.stations[nr-1].content[key].k);
+                let category = this.stations[nr-1].content[key].k;
+                // console.log(key);
+
+                // for some categories it might be useful to be opened from beginning 
+                let item_opened = '';
+                if (category == 'Steckbrief' || category == 'Informationen'  || category == 'Was kann ich davon essen?'  || category == 'Was kann ich hier essen?'){
+                  // add fr7 class for being opened from beginning ;-)
+                  item_opened = ' accordion-item-opened';
+                }
+
+                // differents cases: for 'normal' and for 'sources' and 'steckbrief', they need to display all data into HTML table
+
+                let content_for_item = '';
+
+                if (category != 'Steckbrief' && category != 'Quellen'){
+                  // normale case... just add JSON text without HTML changes...
+                  content_for_item = this.stations[nr-1].content[key].v;
+                }
+
+                if (category == 'Steckbrief'){
+                  // HTML table case... just add JSON text into HTML tables...
+
+                  content_for_item = '<table class="table-steckbrief"><tbody>';
+
+                  for (var key_content in this.stations[nr-1].content[key].v) {
+                    // iterate over each row
+                    // add new row into table (HTML)
+
+
+                    // check, if table row needes to get a bottom line (all, except last row not)
+                    let bottom_line_yes_no = 'tr-with-bottom-line';
+                    if (key_content == this.stations[nr-1].content[key].v.length - 1){
+                      // if it is last row
+                      bottom_line_yes_no = '';
+                    }
+
+                    
+
+                    content_for_item += '<tr class="' + bottom_line_yes_no + '"><td>' + this.stations[nr-1].content[key].v[key_content].caption + '</td>';
+                    content_for_item += '<td>' + this.stations[nr-1].content[key].v[key_content].data + '</td></tr>';                  
+                  }  
+                  content_for_item += '</tbody></table>';
+                }
+
+                if (category == 'Quellen'){
+                  // normale case... just add JSON text without HTML changes...
+                  content_for_item = '<table class="table-steckbrief"><tbody>';
+
+                  for (var key_content in this.stations[nr-1].content[key].v) {
+                    // iterate over each row
+                    // add new row into table (HTML)
+
+
+                    // check, if table row needes to get a bottom line (all, except last row not)
+                    let bottom_line_yes_no = 'tr-with-bottom-line';
+                    if (key_content == this.stations[nr-1].content[key].v.length - 1){
+                      // if it is last row
+                      bottom_line_yes_no = '';
+                    }
+
+                    
+
+                    content_for_item += '<tr class="' + bottom_line_yes_no + '"><td class="td-quellen">' + this.stations[nr-1].content[key].v[key_content].caption + '</td>';
+                    content_for_item += '<td>' + this.stations[nr-1].content[key].v[key_content].source + '</td></tr>';                  
+                  }  
+                  content_for_item += '</tbody></table>';
+                }
+
+
+                string_accordion += '<li class="accordion-item route-item' + item_opened + '">';
+                string_accordion += '<a href="#" class="item-content item-link route-category">';
+                string_accordion += '<div class="item-inner">';
+                string_accordion += '<div class="item-title">' + category + '</div>';
+                string_accordion += '</div>';
+                string_accordion += '</a>';
+                string_accordion += '<div class="accordion-item-content route-content">';
+                string_accordion += '<div class="block">';
+                string_accordion += '<p>' + content_for_item + '</p>';
+                string_accordion += '</div>';
+                string_accordion += '</div>';
+                string_accordion += '</li>';   
+                
+              }
+            }
+
+            // add bottom of fr accordion
+            string_accordion += '</ul></div>';
+
+
+            // load all the data into HTML Element
+            document.getElementById("current_station_content").innerHTML = string_accordion;
+
+
+            // to change ol style in map for active station
+            setStationActive(nr);
+
+        
+          },
+          finishRoute: function(){
+
+            // to close the modus of active route
+
+
+          },
+          zoom_to_aoi_arrow: function(){
+            // call global function
+            zoom_to_aoi();
+          },
+          closeActiveRoute: function(){
+            console.log('FUNCTION: closeActiveRoute function');
+            var self = this;
+            var app = self.$app;
+
+                // var state = ;
+            // if (state == 'off'){
+            //   localStorage.setItem('route_state', 'on');
+            // }
+            if (localStorage.getItem('route_state') == 'on') {
+              // close spaziergang/route
+              localStorage.setItem('route_state', 'off');
+              localStorage.setItem('route_id', '-1');
+
+              // remove current Route and Stations from ol.Map 
+              removeCurrentRoute();
+
+              // var self = this;
+              // var app = self.$app;
+
+              // DESTROY old instance of swiper... including styles
+              // app.swiper.destroy('.swiper-stations');
+              var mySwiper = document.querySelector('.swiper-stations').swiper;
+
+              // Now you can use all slider methods like
+              // destroy instance and also styles of old swiper
+              mySwiper.destroy(true, true);
+
+              var $$ = Dom7;
+              // remove button for closing active Route
+              // $$('.btn_route_close').remove();
+              // document.getElementById("btn_route_close").display = "none";
+              self.$setState({
+                // refresh data to refresh page --> close Button will be removed
+                route_state: localStorage.getItem('route_state'), 
+                }, () => {
+                  console.log('setState update !!!');
+                });
+
+
+              // adapt_home_CSS();
+
+              // initMap();
+              updateMap();
+
+              self.Map_Height('off');
+            }
+          },
+
+          open_SheetModal(){
+            console.log('open Sheet Modal');
+            var self = this;
+            var app = self.$app;
+
+            // var sheet_station = app.sheet.get('.sheet-station');
+
+            app.sheet.open('.sheet-station');
+            console.log('open Sheet Modal - opened');
+          },
+
+          Sheet_Height(value_height){
+            // set height of sheet to specific height value
+            console.log('FUNCTION: Sheet_Height function');
+            var self = this;
+            var app = self.$app;
+            var $$ = Dom7;
+            // var sheet_station = app.sheet.get('.sheet-station');
+            // app.sheet.open('.sheet-station');
+
+
+            /* CHANGE to make top-row unvisible */
+            
+            // let new_height = Math.round(window.innerHeight * (value_height/100)) - 80;
+            let new_height = Math.round(window.innerHeight * (value_height/100)) - 50;
+
+            console.log($$('.sheet-station').height());
+            $$('.sheet-station').css('height', new_height + 'px');
+            console.log(new_height);
+            console.log(screen.height);
+
+            // set button/link to maximize or minimize sheet modal
+            // by using 'innerHTML' or DOM7 aequivalent
+
+            // label with fr7 icons: arrowtriangle_up and arrowtriangle_down or chevron_up and chevron_down
+            if (value_height == 50) {
+              // $$('.insert_min_max').empty();
+              // $$('.insert_min_max').html('<a class="link sheet-max-min" href="#"><i class="icon f7-icons color-yellow if-not-md">chevron_up</i></a>');
+              // // Add event listener
+              // $$('.sheet-max-min').off('click', Sheet_Height(50));
+              // $$('.sheet-max-min').on('click', Sheet_Height(100));
+
+              // self.Map_Height('50');
+
+              this.$setState({sheet_modal_height: 50});
+
+            }
+
+            if (value_height == 100) {
+              // $$('.insert_min_max').empty();
+              // $$('.insert_min_max').html('<a class="link sheet-max-min" href="#"><i class="icon f7-icons color-yellow if-not-md">chevron_down</i></a>');
+              // // Add event listener
+              // $$('.sheet-max-min').off('click', Sheet_Height(100));
+              // $$('.sheet-max-min').on('click', Sheet_Height(50));
+              this.$setState({sheet_modal_height: 100});
+
+            }
+
+          },
+
+          swiper_slideNext() {
+            var mySwiper = document.querySelector('.swiper-stations').swiper;
+            mySwiper.slideNext();
+            console.log('slide next');
+
+          },
+
+          swiper_slidePrev() {
+            var mySwiper = document.querySelector('.swiper-stations').swiper;
+            mySwiper.slidePrev();
+            console.log('slide previous');
+
+          },
+
+          map_element_clicked: function(nr){
+            // map openlayers element was clicked
+            console.log('FUNCTION: map_element_clicked function - nr: ' + nr);
+
+            let nr_asNumber = parseInt(nr, 10);
+            console.log('typeof nr : ' + typeof(nr_asNumber));
+
+
+            // set active slide of swiper
+            var mySwiper = document.querySelector('.swiper-stations').swiper;
+            mySwiper.slideTo(nr_asNumber-1); 
+
+            // call slideClick(nr)
+            // self.slideClick(nr_asNumber);
+
+          },
+          setGeolocation: function(){
+            var self = this;
+
+            let state_geol = localStorage.getItem('geol');
+            if (state_geol == 'off'){
+              setTrackingGeolocation(true);
+              localStorage.setItem('geol', 'on');
+              self.$setState({
+                  geol: 'on',   
+                });
+            }
+
+            if (state_geol == 'on'){
+              setTrackingGeolocation(false);
+              localStorage.setItem('geol', 'off');
+              self.$setState({
+                  geol: 'off',   
+                });
+            }
+
+          },
+
+          Map_Height: function(status){
+            // to set correct height for openlayers map
+
+            // status represents different sizes for height of map
+            // 'off' means without active route.. full height except appbar
+            // 'on' means with active route... full height except appbar and tabbar... but sheet modal is closed
+            //  '50' means with active rote AND sheet modal is visible 50% height
+
+            var $$ = Dom7;
+            console.log('map height change');
+            console.log('Status: ' + status);
+
+            // calc specific height for ol map
+            // let height_page_content_map = $$('.page-content-map').height();
+            // let height_page_content_map = window.innerHeight;
+            let height_page_content_map = $$(window).height();
+
+            
+            let height_map = $$('#map').height();
+
+            console.log('Height Map: ' + height_map);
+            console.log('Height Map Page Content: ' + height_page_content_map);
+
+            let result_height = '';
+
+
+            if (status == 'off'){
+              result_height = parseInt(height_page_content_map) - 45;
+            }
+
+            if (status == 'on'){
+              /* CHANGE to make top-row unvisible */
+              // result_height = parseInt(height_page_content_map) - 45 - 80;
+              result_height = parseInt(height_page_content_map) - 45 - 50;
+            }
+
+            if (status == '50'){
+              // height of 50% sheet modal
+
+              /* CHANGE to make top-row unvisible */
+              // let sheet_height = Math.round(window.innerHeight * (50/100)) - 80;
+              let sheet_height = Math.round(window.innerHeight * (50/100)) - 50;
+
+              /* CHANGE to make top-row unvisible */
+
+              // result_height = parseInt(height_page_content_map) - 45 - 80 - sheet_height;
+              result_height = parseInt(height_page_content_map) - 45 - 50 - sheet_height;
+            }
+
+            // FINAL
+            console.log('Result Map_Height: ' + result_height);
+
+            $$('#map').css('height', result_height + 'px');
+
+          },
+          dummy_setGPS_Follow_Me: function(){
+            console.log('dummy_setGPS_Follow_Me');
+            setGPS_Follow_Me();
+
+            var self = this;
+
+            self.$setState({
+
+                  geol_follow_me: localStorage.getItem('geol_follow_me'),
+                });
+          }
+        },
+        
+        
+        on: {
+          pageInit: function () {
+
+            console.log('Page-Event: Init home.f7.html');
+            // checkLocalStorage Function call for local storage settings
+            checkLocalStorage();  
+
+            // call function to load map content
+            initMap();
+
+            // JSON list of all accesible routes print to console
+            // console.log(mainView.router.routes);
+
+            // to access some values from 'data' above, use 'this.' to get this data within methods :-)
+
+            var self = this;
+            self.Map_Height('off');
+
+            geol_follow_me: localStorage.getItem('geol_follow_me')
+            self.$setState({
+
+                  geol_follow_me: localStorage.getItem('geol_follow_me'),
+                });
+          },
+
+          // pageAfterIn: function () {
+          //   // this event should be called not only once, but also after chosing a route...and get back to home page
+          //   // this.route_state = localStorage.getItem('route_state');
+          //   // this.route_id = localStorage.getItem('route_id');
+
+          // },
+          pageMounted: function () {
+            console.log('Page-Event: Mounted home.f7.html');
+            
+            checkLocalStorage(); 
+            // adapt_home_CSS();
+            // updateMap();
+
+
+            var $$ = Dom7;
+            // remove all stupid items of swiper first... to clean it
+            //$$('.swiper-slide').remove();
+            var self = this;
+            var app = self.$app;
+            var mainView = app.views.get('.view-main');
+
+            console.log('route_state ' + this.route_state);
+            console.log('route_id ' + this.route_id);
+            console.log('+++++++++++++++++++');
+            console.log(mainView.router.routes);
+            console.log(mainView.history);
+            console.log('+++++++++++++++++++');   
+            
+            // HEIGHT of ol.map
+
+            
+            this.route_state = localStorage.getItem('route_state');
+            if (this.route_state == 'on'){
+            // change HEIGHT of ol map 
+              self.Map_Height('on');             
+              
+              // $$('#map').height('calc(100% - 80px - 45px) !important');
+
+              // warum bleibt die Hoehe des page-content immer 100% ??? 
+              // $$('#map').height(200);              
+            }
+            
+            if (this.route_state == 'off'){
+            // change HEIGHT of ol map 
+              self.Map_Height('off');              
+              
+              // $$('#map').height('calc(100% - 80px - 45px) !important');
+
+              // warum bleibt die Hoehe des page-content immer 100% ??? 
+              // $$('#map').height(200);              
+            }
+            // init swiper variable
+
+            // import Swiper from 'framework7/components/swiper/swiper.js';
+            // document.getElementById("btn_route_close").display = "none";
+
+
+            this.route_state = localStorage.getItem('route_state');
+            this.route_id = localStorage.getItem('route_id');
+            // only if route modus is activated: load some required data
+            if (this.route_state == 'on'){  
+
+              // var $$ = Dom7;
+              // add button for closing active Route
+              
+              // document.getElementById("btn_route_close").display = "inline";
+
+              // var right_appbar = $$('right-appbar);
+
+              // links.add('p').addClass('blue');
+              // links.add(divs).addClass('red');
+
+              // .prepend(HTMLElement)
+              // document.getElementById("place-for-button").innerHTML = ' <a @click="closeActiveRoute()" href="#" class="link icon-only btn_route_close"><i class="f7-icons color-red">xmark_octagon_fill</i></a>';
+
+              // build path for current route
+              const path_route_id_json = 'json/' + this.route_id + '/route_stations.json';
+
+              // request user data on page init
+              app.request.get(path_route_id_json, (content) => {
+                // update component state with new state
+                console.log(content);
+
+                var obj = JSON.parse(content);
+                console.log(obj);
+                // console.log(obj.title);
+
+                //only stations array
+                console.log(obj.stations);
+
+                // how to draw the line and the stations into ol.Map?
+                // by using hidden html object or calling a global JS function ???   
+
+                //dummy_test(453);
+                
+                // first all data should be available for pagination and slides
+
+
+                // var swiper = new Swiper('.swiper-container', {
+                //   pagination: {
+                //     el: '.swiper-pagination',
+                //     clickable: true,
+                //     renderBullet: function (index, className) {
+                //       return '<span class="' + className + '">' + (index + 1) + '</span>';
+                //     },
+                //   },
+                // });                  
+
+
+                // for refresh of ol map --> height
+                let new_map_refresh = parseInt(this.map_refresh) + 1;
+
+
+                self.$setState({
+                  route_data: obj,  
+                  stations: obj.stations,  
+                  sheet_modal_height: 50,   // is important for correct loaded icon for sheet modal, also when route is started
+
+                  map_refresh: new_map_refresh,
+                  geol: localStorage.getItem('geol'),
+                  geol_follow_me: localStorage.getItem('geol_follow_me'),
+                }, () => {                      
+                  
+                  
+                  
+                  // arrow function after refreshing GUI...
+                  console.log('swiper update !!!');
+
+                  var swiper = new Swiper('.swiper-stations', {
+                    // slidesPerView: 3,
+                    slidesPerView: 'auto', // is important, that every time the active slide is also visible on screen...not hidden left or right
+                    centeredSlides: true,
+                    //centerInsufficientSlides: true,
+                    spaceBetween: 5, // is better than CSS border-right/left... so always it will be centered
+                    pagination: {
+                      el: '.swiper-pagination',
+                      type: 'progressbar',
+                    },
+                    navigation: {
+                      nextEl: '.swiper-button-next',
+                      prevEl: '.swiper-button-prev',
+                    },
+                  });
+                  swiper.updateSlides(); 
+                  
+
+                  // transitionEnd is better, because it will be fired when change of slides is finished. so I can get the new current active slide.
+
+                  swiper.on('transitionEnd', function () {
+                    // let index_currentSlide = swiper.realIndex;
+                    // let currentSlide = swiper.slides[index_currentSlide];
+                    // console.log(currentSlide.data('id'));
+                    // get active slide
+                    // maybe ID or direct onClick Event of active slide?
+
+                    var active_el = $$('.swiper-slide-active').data('id');
+                    // var active_el = $$('.swiper-slide-active').attr('click');
+                    console.log('id active el: ' + active_el);
+                    // console.log('slide changed');
+
+                    // if (typeof active_el == 'number'){
+                    if (active_el != 'close'){
+                      // only numbers = normal slide... not when there is the last slide for close active route
+                      self.slideClick(active_el);
+                      // console.log('huhu');
+                    }
+
+                  });
+
+
+                  
+                  // initMap();
+                  updateMap();
+
+                  
+                  // call of globale function (see app_framework7.js) to draw line and stations of current route
+                  drawCurrentRoute(obj.line.features[0], obj.stations);     
+
+                  // call content for first station
+                  self.slideClick(1);
+
+                });
+
+                // var swiper = app.swiper.create('.swiper-container', {
+                //   speed: 400,
+                //   spaceBetween: 10
+                // });
+              });   
+
+            }
+
+          }
+        },
+      
+    }
+</script>

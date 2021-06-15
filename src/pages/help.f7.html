@@ -1,0 +1,127 @@
+<template>
+<!-- evt. brauche ich eine aufgeklapptes Accordion-->
+<div class="page" data-name="help">
+
+  <!-- Appbar -->
+  <div class="appbar">
+    <div class="appbar-inner">
+      <div class="left">
+        <b>{{title}}</b>
+
+      </div>
+
+      <div class="right"> 
+        <button @click="closeClick()" class="button button-fill">Okay</button>  
+
+      </div>
+    </div>
+  </div>
+
+
+    <div class="page-content">
+      <div class="block block-strong">
+        <p class="block">
+          <p>Zum Starten eines Spazierganges eine Auswahl ueber die Lister treffen umd mit einem Klick auf 'Start' beginnen.
+          Die Route bietet verschiedene Stationen zum Innehalten und Erkunden. Diese sind in der Karte entsprechend visualisiert.
+            Das 'Apfel'-Symbol weist auf ein essbares Gehoelz hin. Die 'Raute' steht fuer weitere interessante Orte (Point of Interest),
+            wie zum Beispiel Denkmaeler oder Aussichtspunkte.</p>
+          
+          <p>Mit den Pfeiltasten nach links und rechts kann zwischen den Stationen eines Spazierganges navigiert werden. 
+            Alternativ kann die Zeile mit den Namen der Stationen auch horizontal verschoben werden.</p>
+            <p>Neben einer farblichen Hervorhebung in der Karte werden auch viele interessante Informationen, Steckbriefe und Fotos mitgeladen.
+            Ein Klick auf 'Klick hier' oeffnet zunaechst ueber die halbe Bildschirmhoehe ein Fenster mit diesen Informationen.
+            Die unterschiedlichen Kategorien koennen jeweils noch ausgeklappt werden.</p>
+            <p>Ein Klick auf den Pfeil nach oben erweitert dieses Fenster auf die voll Hoehe. Die Karte ist in diesem Modus nicht mehr zu sehen.</p>
+          
+          <p>Viel Freude beim Kennenlernen!</p>
+  
+        </p>
+      </div>
+
+
+        <div class="navbar navbar-large navbar-transparent">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner sliding">
+                <div class="right">
+                <!-- <a href="#" class="link back">
+                    <i class="icon icon-back"></i>
+                    <span class="if-not-md">Okay</span>
+                </a> -->
+                <button @click="closeClick()" class="button button-fill">Okay</button>
+                </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</template>
+<script>
+    export default {
+      
+        data: function () {
+          return {
+            // empty initial data
+
+            title: 'Hilfe',
+          }
+        },
+        
+        methods: {
+          onClick: function(e){
+            console.log('CLICKED');
+
+          },
+          closeClick: function(){
+            console.log('close click function');
+            // onClick on Close Button           
+          
+            var self = this;
+            this.$app.views.main.router.back('/', {force: true});
+        
+          }
+        },
+        
+        
+        on: {
+          pageInit: function () {
+            var self = this;
+            var app = self.$app;
+            var $$ = Dom7;
+            // // request user data on page init
+            // app.request.get(xxx.json', (tours) => {
+
+            // hier eventuell spaeter per Request verschiedene Sprachen fuer die GUI laden... dt, en, ...?
+
+
+          },
+          pageBeforeOut: function () {
+            var self = this;
+            var app = self.$app;
+            var $$ = Dom7;
+
+            console.log('page beforeout help.f7.html');
+
+          },
+          pageMounted: function () {
+            var self = this;
+            var app = self.$app;
+            var $$ = Dom7;
+           
+
+            console.log('page mounted help');
+
+          },
+
+          pageAfterOut: function () {
+            var self = this;
+            var app = self.$app;
+            var $$ = Dom7;
+
+          },
+        },        
+    }
+</script>
+
+

@@ -1,0 +1,484 @@
+{   "nr": "1",
+    "title": "Sommer-Spaziergang",
+    "zielgruppe": ["Kinder", "Jugendliche"],
+    "length_km": "3.32",
+    "duration_min": "50",
+    "sum_elevation_up_m": "",
+    "sum_elevation_down_m": "",
+    "barrierefrei": "nein",
+	"line": {
+"type": "FeatureCollection",
+"name": "Sommerroute_1",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "fid": 1 }, "geometry": { "type": "LineString", "coordinates": [ [ 13.706468384235201, 51.029732756038158 ], [ 13.706336397878539, 51.029752287437788 ], [ 13.70627687461965, 51.029773446444771 ], [ 13.7062018235541, 51.029683927503072 ], [ 13.706181119811877, 51.029638354157264 ], [ 13.706163004037432, 51.029641609397729 ], [ 13.706072425165212, 51.0296269608138 ], [ 13.705316738574124, 51.029451177445509 ], [ 13.705298622799681, 51.029379561808035 ], [ 13.705063117731909, 51.029306318427977 ], [ 13.704998418537468, 51.0292509789085 ], [ 13.704980302763024, 51.029111002181963 ], [ 13.704988066666356, 51.029031247811517 ], [ 13.704977714795247, 51.028891270421376 ], [ 13.704875490068028, 51.028828605987627 ], [ 13.704831494615807, 51.02877814884954 ], [ 13.704764207453586, 51.028730946960955 ], [ 13.70467880451692, 51.028696766253013 ], [ 13.704386364158042, 51.028691883292673 ], [ 13.704363072448043, 51.028600734605313 ], [ 13.704435535545818, 51.028600734605313 ], [ 13.704435535545818, 51.028203991578913 ], [ 13.703930881829166, 51.028203991578913 ], [ 13.703995581023609, 51.027882525507962 ], [ 13.70412756738027, 51.02752768948401 ], [ 13.704208304721696, 51.027447584829446 ], [ 13.70441210735687, 51.027438456861255 ], [ 13.704208304721696, 51.027447584829453 ], [ 13.704116980458066, 51.027458470576953 ], [ 13.704091335831382, 51.027410495338088 ], [ 13.704052516314718, 51.027023915325422 ], [ 13.703991100094218, 51.026352615596615 ], [ 13.70373657447451, 51.026456479004693 ], [ 13.703647183439173, 51.026484805348339 ], [ 13.703451000823447, 51.026534054518194 ], [ 13.703331585318224, 51.026566672675976 ], [ 13.703196475203743, 51.0265898487215 ], [ 13.703055223720421, 51.026598432439116 ], [ 13.702843935362532, 51.02660721915381 ], [ 13.702723589803059, 51.026600149182457 ], [ 13.702613727538253, 51.026578260700184 ], [ 13.702514783262496, 51.026550792786239 ], [ 13.702423345104211, 51.026508732511459 ], [ 13.702332589320239, 51.026439204218448 ], [ 13.702274587503418, 51.026375040670324 ], [ 13.702246610156479, 51.026320104585309 ], [ 13.702230233172905, 51.026282765177854 ], [ 13.70222968727345, 51.026260948077208 ], [ 13.702232280295854, 51.026215597087585 ], [ 13.702252251117486, 51.02617121888381 ], [ 13.702382871430919, 51.026136463485862 ], [ 13.702486218857603, 51.026101094737811 ], [ 13.702543971831339, 51.026065725962759 ], [ 13.70256676905781, 51.026032268988544 ], [ 13.702554610537023, 51.025990208758152 ], [ 13.70247254052172, 51.025956751729446 ], [ 13.702395029951706, 51.025926162424916 ], [ 13.702276484374041, 51.025871675176226 ], [ 13.7021292417742, 51.025846635810204 ], [ 13.702040442129935, 51.025766519751187 ], [ 13.702032435604631, 51.025734015482044 ], [ 13.702036074934314, 51.025712040751976 ], [ 13.702051360118983, 51.025682283288383 ], [ 13.702070132997001, 51.02566312803237 ], [ 13.702142343361059, 51.025607202833818 ], [ 13.702233326603134, 51.025561422009154 ], [ 13.702173641596332, 51.025515641139279 ], [ 13.702117595919216, 51.025461619654664 ], [ 13.702056455180539, 51.025378298258367 ], [ 13.702006232430914, 51.025287651734054 ], [ 13.701982394821494, 51.025214745246863 ], [ 13.702029540241162, 51.025132663669474 ], [ 13.702029468353146, 51.025132490341221 ], [ 13.702029252689147, 51.025132392373081 ], [ 13.701931899122142, 51.025093482162156 ], [ 13.701850378137243, 51.025040604719635 ], [ 13.701931535189173, 51.025093024349069 ], [ 13.70202963609181, 51.025132543093306 ], [ 13.702141797461611, 51.02509997738499 ], [ 13.702154565443783, 51.025127252812801 ], [ 13.702141979428093, 51.02509997738499 ], [ 13.702158851765418, 51.025095333078461 ], [ 13.702244946869094, 51.025079411560725 ], [ 13.702309815077466, 51.025068547436824 ], [ 13.702339370415009, 51.025062028961266 ], [ 13.702358946028188, 51.02505889043568 ], [ 13.702625373393237, 51.025081178433624 ], [ 13.702649756902114, 51.025135887080602 ], [ 13.702708168143527, 51.025162211301961 ], [ 13.702724727093583, 51.025289940789875 ], [ 13.702825172592835, 51.025276206453221 ], [ 13.702952913064708, 51.025334806261242 ], [ 13.70298967029451, 51.02544330727271 ], [ 13.703037709446324, 51.025431404220569 ], [ 13.703145433604943, 51.025426826122775 ], [ 13.703700552696951, 51.025526396000039 ], [ 13.703591858050288, 51.025321297195319 ], [ 13.703571154308065, 51.025129219714067 ], [ 13.703635423855163, 51.024900799675628 ], [ 13.703654530335985, 51.024830467793521 ], [ 13.703886886376946, 51.024914352435978 ], [ 13.703933469796942, 51.025044575147646 ], [ 13.703886992519266, 51.024914419669692 ], [ 13.703654575827601, 51.024830482100171 ], [ 13.703684863142279, 51.024475356784684 ], [ 13.703710904568061, 51.024360901830164 ], [ 13.703710904568061, 51.02419160973691 ], [ 13.703716080503616, 51.024108591272949 ], [ 13.703892062312502, 51.023812328091566 ], [ 13.703892062312502, 51.023669079280843 ], [ 13.703664321148063, 51.02360722170301 ], [ 13.703622913663619, 51.023428159828207 ], [ 13.703509043081402, 51.023232818812339 ], [ 13.70338482062807, 51.023262120017193 ], [ 13.703353765014739, 51.023258864328675 ], [ 13.703343413143628, 51.02324584157234 ], [ 13.703374468756962, 51.023206773281366 ], [ 13.703405524370293, 51.023151426479458 ], [ 13.703752312052504, 51.023080615033614 ], [ 13.704507998643592, 51.022774578115751 ], [ 13.704689156388033, 51.022758299499699 ], [ 13.704790087131363, 51.022748532327327 ], [ 13.704779735260251, 51.02279085672609 ], [ 13.704826318680253, 51.022800623889545 ], [ 13.706404979024649, 51.022484817895396 ], [ 13.708739325960135, 51.022055057829107 ], [ 13.709647778452187, 51.0230007712752 ], [ 13.710222231496754, 51.02279085672609 ], [ 13.710299588277914, 51.022762928186715 ], [ 13.710501732016747, 51.022826669648701 ], [ 13.710838167827848, 51.022758299499699 ], [ 13.710931334667846, 51.022709463617254 ], [ 13.710857719095753, 51.022748103579715 ], [ 13.710855899430914, 51.022748962022682 ], [ 13.710960120734612, 51.022757889828647 ], [ 13.711088953005264, 51.022805046929136 ], [ 13.711144270816396, 51.022882192179402 ], [ 13.7111646510626, 51.022911493605797 ], [ 13.711150093743882, 51.022960939720868 ], [ 13.711142638811692, 51.022982588473596 ], [ 13.711118942092753, 51.023007940824172 ], [ 13.710998621830065, 51.022930852538998 ], [ 13.711119002748246, 51.023007902671353 ], [ 13.711068572759062, 51.023073108953028 ], [ 13.711013254947934, 51.023148193500745 ], [ 13.710822554072728, 51.023254410485045 ], [ 13.710723564305445, 51.023308434541811 ], [ 13.710604194291959, 51.023356964578362 ], [ 13.710432417931084, 51.023359711554399 ], [ 13.710429268918972, 51.023373627210759 ], [ 13.710367157692305, 51.023520132604844 ], [ 13.710310222401196, 51.023640592248682 ], [ 13.710499144048969, 51.023874185395719 ], [ 13.710866635473403, 51.024281139286323 ], [ 13.711109904444507, 51.024538332302811 ], [ 13.709370790097889, 51.025708705286853 ], [ 13.711089200702281, 51.027652207939397 ], [ 13.711091242750184, 51.027674951550367 ], [ 13.710960707845672, 51.027718470426905 ], [ 13.711091788670059, 51.027674995594367 ], [ 13.71155880902433, 51.028177745381306 ], [ 13.711576062142855, 51.028205958346888 ], [ 13.711472543431702, 51.028234171295303 ], [ 13.709856788881746, 51.028610432725166 ], [ 13.709883158940986, 51.028638017019318 ], [ 13.709855919466911, 51.028609473094541 ], [ 13.70897774249284, 51.02884047425772 ], [ 13.70808575626504, 51.029058578618603 ], [ 13.707399082147699, 51.029220257308296 ], [ 13.707144452133864, 51.029302335067612 ], [ 13.707284061357475, 51.029425881404286 ], [ 13.707196897164618, 51.029444260030822 ], [ 13.707077850646845, 51.029480067813402 ], [ 13.707007668775017, 51.029406522214302 ], [ 13.706539553349083, 51.029603767213118 ], [ 13.706490381961304, 51.029624722835308 ], [ 13.706579666849636, 51.029701220948489 ], [ 13.706522731558525, 51.029722379978779 ], [ 13.70646957038708, 51.029732586494795 ], [ 13.706469031227126, 51.029732654312163 ], [ 13.706468380865436, 51.029732756038236 ] ] } }
+]
+},
+	
+	
+	
+	
+	"stations": [
+	
+	{"title_long": "Name Lang",
+	 "title_short": "Station",
+	 "content": [ {"k": "Informationen", "v": "some longer description...  [1]."},
+				  {"k": "Quellen", "v": [{"caption": "Foto", "source": "Image Source"}, 
+												{"caption": "1", "source": "ein Link zur Quelle"} 
+												]}	 
+	 ],
+	 "order": "1",
+	 "image_path": "",
+	 "image_text": "Untertitel Bild",
+	 "point": { "type": "Feature", "properties": { "id": 1, "order":"1", "type":"station-poi" }, "geometry": { "type": "Point", "coordinates": [ 13.706462480995077, 51.029748438092028 ] } }
+	 
+	},
+
+
+
+	{"title_long": "Name Lang",
+	 "title_short": "Station",
+	 "content": [ 
+
+	              {"k": "Was kann ich davon essen?", "v": "<b>Früchte:</b> eingekocht als Gelees, Süßmost, Kompott, Wein; für Mischungen mit anderen säurearmen Fruchtarten und als Farbkomponente"},
+	              {"k": "Steckbrief", "v": [{"caption": "Deutscher Name", "data": "Mahonie"}, 
+													{"caption": "Lateinischer Name", "data": "Mahonia aquifolium"},
+													{"caption": "Merkmale", "data": "immergrüner Strauch, bis ca. 1,5m hoch, Holz der Triebe und Wurzeln gelb"},
+													{"caption": "Blätter", "data": "unpaarig gefiedert, oberseits glänzend grün mit dornig gezähnten Blatträndern"},
+													{"caption": "Blüte", "data": "April – Mai / kleine, goldgelbe Blüten in vielblütigen Trauben, duftend"},
+													{"caption": "Frucht", "data": "Aug. - Sep. / bis 1cm dicke, kugelige bis ovale schwarze Beeren mit hellblauer Bereifung"},
+													{"caption": "Fundort", "data": "in Parkanlagen, Gärten, Hecken, auf Friedhöfen"},
+													{"caption": "Geschmack", "data": "sauer, fruchtig, ähnlich Sauerkirsche"},
+													{"caption": "Verwendung", "data": "Früchte: eingekocht als Gelees, Süßmost, Kompott, Wein; für Mischungen mit anderen säurearmen Fruchtarten und als Farbkomponente"}]},
+				  {"k": "Gut zu wissen", "v": "noch ein Funfact."},
+				  {"k": "Mehr Infos", "v": "und noch mehr Informationen mit Quellenangabe [1]. "},
+				  {"k": "Quellen", "v": [{"caption": "Foto", "source": "Bildquelle"},
+											{"caption": "1", "source": "Link zur Quelle"}
+											]}	 
+	 ],
+	 "order": "2",
+	 "image_path": "",
+	 "image_text": "",
+	 "point": { "type": "Feature", "properties": { "id": 2, "order":"2", "type":"station-essbar" }, "geometry": { "type": "Point", "coordinates": [ 13.706483516657903, 51.029664961220291 ] } }
+	 
+	},
+	
+	
+	
+	{"title_long": "Name Lang",
+	 "title_short": "Station",
+	 "content": [
+	              {"k": "Was kann ich davon essen?", "v": "Text [1][2]"},
+	              {"k": "Steckbrief", "v": [{"caption": "Deutscher Name", "data": "Ginkgo"}, 
+													{"caption": "Lateinischer Name", "data": "Ginkgo biloba"}, 
+													{"caption": "Merkmale", "data": "15-30m hoher Baum, vielseitiges Erscheinungsbild: weiblicher Ginkgo stattlich verzweigt, männlicher Ginkgo starr aufrecht wachsend"},
+													{"caption": "Blätter", "data": "Fächerförmig, langgestielt, oft eingeschnitten oder gelappt, parallel- und gabelnervig, ledrig, frischgrün, im Herbst leuchtend goldgelb."},
+													{"caption": "Blüte", "data": "April – Mai / Pflanze ist zweihäusig. Männliche Blüten in Kätzchen, weibliche einzeln langgestielt, mit dem Laubaustrieb. An alten männlichen Pflanzen gelegentlich auch fruchtende Zweige. Weiblicher Baum braucht zur Bestäubung männlichen Baum in der Nähe"},
+													{"caption": "Frucht", "data": "Mirabellenähnlich, fleischig mit Steinkern; im reifen Zustand unangenehmer Geruch nach Buttersäure. Deshalb werden im Stadtraum gerne männliche Bäume ohne Früchte gepflanzt."},
+													{"caption": "Fundort", "data": "Straßenbäume, in Stadträumen und Parks, in Gärten"},
+													{"caption": "Geschmack", "data": "Fruchtschale riecht unangenehm nach Buttersäure. Kern der Frucht ist essbar"},
+													{"caption": "Verwendung", "data": "Nutzung des Kerns / der Nuss als asiatisches Gewürz, Nutzung der Blätter als Tee für erhöhte Konzentrationsfähigkeit"}]},
+				  {"k": "Gut zu wissen", "v": "weitere Infos"},
+				  {"k": "Quellen", "v": [{"caption": "Foto", "source": "Bildquelle"},
+											{"caption": "1", "source": "Link 1"},
+											{"caption": "2", "source": "Link 2"}
+											]}	 
+	 ],
+	 "order": "3",
+	 "image_path": "",
+	 "image_text": "Untertitel Bild",
+	 "point": { "type": "Feature", "properties": { "id": 3, "order":"3", "type":"station-essbar" }, "geometry": { "type": "Point", "coordinates": [ 13.704423369051161, 51.027427944332864 ] } }
+	 
+	},
+	
+	
+	
+	
+	
+	{"title_long": "Name Lang",
+	 "title_short": "Station",
+	 "content": [ {"k": "Informationen", "v": "Text [1][2]"},
+
+				  {"k": "Quellen", "v": [{"caption": "Foto", "source": "Bildquelle"}, 
+												{"caption": "1", "source": "Quelle 1"}, 
+												{"caption": "2", "source": "Quelle 2"}]}	 
+	 ],
+	 "order": "4",
+	 "image_path": "",
+	 "image_text": "Untertitel Bild",
+	 "point": { "type": "Feature", "properties": { "id": 4, "order":"4", "type":"station-poi" }, "geometry": { "type": "Point", "coordinates": [ 13.703753294106185, 51.026378782312619 ] } }
+	 
+	},	
+	
+	
+	
+	{"title_long": "Name Lang",
+	 "title_short": "Station",
+	 "content": [ 
+	              {"k": "Was kann ich davon essen?", "v": "Text"},
+	              {"k": "Steckbrief", "v": [{"caption": "Deutscher Name", "data": "Berberitze"}, 
+													{"caption": "Lateinischer Name", "data": "Berberis vulgaris"},
+													{"caption": "Merkmale", "data": "2-3 m hoher Strauch, dreiteilige Blattdornen, Holz mit gelbem Querschnitt"},
+													{"caption": "Blätter", "data": "graugrün, eierförmig, am Rand stachelig gesägt, buschig angeordnet"},
+													{"caption": "Blüte", "data": "Mai – Juni / gelbe, hängende 4-7 cm lange Blütentrauben, süßer Duft"},
+													{"caption": "Frucht", "data": "September / länglich, oval, 8-12 mm lang, leuchtend rot"},
+													{"caption": "Fundort", "data": "an Waldrändern, Gebüschsäumen, Parkanlagen, in Hecken"},
+													{"caption": "Geschmack", "data": "sehr säuerlich, nach Frost etwas milder"},
+													{"caption": "Verwendung", "data": "roh mit Zucker, eingekocht für Soßen, Mus, Saft, Gelee"}]},
+				  {"k": "Gut zu wissen", "v": "gute Info] "},
+				  {"k": "Mehr Infos", "v": "Text "},
+				  {"k": "Rezept", "v": "Rezept mit URL"},
+
+				  {"k": "Quellen", "v": [{"caption": "Foto", "source": "Bildquelle"}, 
+												{"caption": "1", "source": "URL 1"}, 
+												{"caption": "2", "source": "URL 2"}]}	 
+	 ],
+	 "order": "5",
+	 "image_path": "",
+	 "image_text": "",
+	 "point": { "type": "Feature", "properties": { "id": 5, "order":"5", "type":"station-essbar" }, "geometry": { "type": "Point", "coordinates": [ 13.703641217037864, 51.026324264411883 ] } }
+	 
+	},
+
+
+	{"title_long": "Name Lang",
+	 "title_short": "Station",
+	 "content": [ 
+	              {"k": "Was kann ich hier essen?", "v": "Text"},	 	 
+				  {"k": "Informationen", "v": "Text [1]. <br> Text [2]. Nochmal Text [3]."},
+
+				  {"k": "Quellen", "v": [{"caption": "Foto", "source": "Bildquelle"}, 
+												{"caption": "1", "source": "URL 1"},
+												{"caption": "2", "source": "URL 2"},
+												{"caption": "3", "source": "URL 3"}]}	 
+	 ],
+	 "order": "6",
+	 "image_path": "",
+	 "image_text": "Untertitel Bild",
+	 "point": { "type": "Feature", "properties": { "id": 6, "order":"6", "type":"station-poi" }, "geometry": { "type": "Point", "coordinates": [ 13.701849976242059, 51.025039748270444 ] } }
+	 
+	},
+	
+	
+	
+	
+	{"title_long": "Name Lang",
+	 "title_short": "Station",
+	 "content": [ 
+	              {"k": "Was kann ich davon essen?", "v": "text"},
+				  {"k": "Steckbrief", "v": [{"caption": "Deutscher Name", "data": "text"}, 
+													{"caption": "Lateinischer Name", "data": "Prunus serotina"}, 
+													{"caption": "Merkmale", "data": "Baum oder Großstrauch, mit leicht überhängenden Seitenästen, 8 – 15 m hoch"},
+													{"caption": "Blätter", "data": "wechselständig angeordnete längliche Laubblätter, gezähnter Blattrand, glänzend dunkelgrün"},
+													{"caption": "Blüte", "data": "Mitte Mai – Juni / kleine, weiße Blüten in vielblütigen Trauben, duftend"},
+													{"caption": "Frucht", "data": "Juli – August / bis 1 cm dicke, kugelige bis ovale schwarze Kirschen"},
+													{"caption": "Fundort", "data": "in Parkanlagen, Gärten, Hecken, auf Friedhöfen"},
+													{"caption": "Geschmack", "data": "aromatisch süß, meist bitterer Nachgeschmack"},
+													{"caption": "Verwendung", "data": "Früchte: eingekocht als Gelees, Süßmost, Kompott, Wein / für Mischungen mit anderen säurearmen Fruchtarten und als Farbkomponente"}]},
+				  {"k": "Gut zu wissen", "v": "text [1]. "},
+				  {"k": "Mehr Infos", "v": "ttttttt [2]. "},
+				  
+
+				  {"k": "Quellen", "v": [{"caption": "Foto", "source": "Bildquelle <i>(Bild muss noch gemacht werden)</i>"},
+											{"caption": "1", "source": "URL 1"},
+											{"caption": "2", "source": "URL 2"}]}	 
+	 ],
+	 "order": "7",
+	 "image_path": "no",
+	 "image_text": "",
+	 "point": { "type": "Feature", "properties": { "id": 7, "order":"7", "type":"station-essbar" }, "geometry": { "type": "Point", "coordinates": [ 13.702165876745276, 51.025125765127392 ] } }
+	 
+	},
+
+
+	
+	{"title_long": "Name Lang",
+	 "title_short": "Station",
+	 "content": [
+	              {"k": "Was kann ich davon essen?", "v": "<b>Früchte:</b> xxx"},
+	              {"k": "Steckbrief", "v": [{"caption": "Deutscher Name", "data": "Pflaume"}, 
+													{"caption": "Lateinischer Name", "data": "Prunus domestica"},
+													{"caption": "Merkmale", "data": "meist sparrige Büsche oder Bäume, bis zu 6 m hoch"},
+													{"caption": "Blätter", "data": "erscheinen kurz nach Blüte, länglich-elliptisch, gekerbter bis gesägter Blattrand"},
+													{"caption": "Blüte", "data": "April – Mai / 2 bis 3 weiße Blüten in doldigem Blütenstand"},
+													{"caption": "Frucht", "data": "Juli – September / je nach Sorte untersch. Farbe von gelb bis blau, in Form und Größe rund bis oval, meist bereift"},
+													{"caption": "Fundort", "data": "in Parkanlagen, Gärten, auf Streuobstwiesen"},
+													{"caption": "Geschmack", "data": "saftig, weich, Hülle meist ledrig, je nach Sorte süß bis herb"},
+													{"caption": "Verwendung", "data": "<b>Früchte:</b> frisch als Naschfrucht, für Kuchen, zum Trocknen; eingekocht als Mus, Kompott, Konfitüre, für Likör"}]},
+				  {"k": "Gut zu wissen", "v": "text [1]."},
+				  {"k": "Mehr Infos", "v": "text text"},
+
+				  {"k": "Quellen", "v": [{"caption": "Foto", "source": "Bildquelle <i>(Bild muss noch gemacht werden)</i>"},
+											{"caption": "1", "source": "URL 1"}
+											]}	 
+	 ],
+	 "order": "8",
+	 "image_path": "no",
+	 "image_text": "",
+	 "point": { "type": "Feature", "properties": { "id": 8, "order":"8", "type":"station-essbar" }, "geometry": { "type": "Point", "coordinates": [ 13.703794226818978, 51.025024382769004 ] } }
+	 
+	},
+	
+	
+	
+	{"title_long": "Name Lang",
+	 "title_short": "Station",
+	 "content": [ {"k": "Informationen", "v": "text [1]"},
+
+				  {"k": "Quellen", "v": [{"caption": "Foto", "source": "Bildquelle"},
+										{"caption": "1", "source": "URL"}
+										]}	 
+	 ],
+	 "order": "9",
+	 "image_path": "",
+	 "image_text": "Untertitel Bild",
+	 "point": { "type": "Feature", "properties": { "id": 9, "order":"9", "type":"station-poi" }, "geometry": { "type": "Point", "coordinates": [ 13.704325195126533, 51.024035321851883 ] } }
+	 
+	},
+
+
+	
+	{"title_long": "Name Lang",
+	 "title_short": "Station",
+	 "content": [
+	              {"k": "Was kann ich davon essen?", "v": "<b>Triebe:</b> xxx <br><b>Blüten:</b> xxx"},
+	              {"k": "Steckbrief", "v": [{"caption": "Deutscher Name", "data": "Hopfen"}, 
+													{"caption": "Lateinischer Name", "data": "Humulus lupulus"},
+													{"caption": "Merkmale", "data": "starkwüchsige, mehrjährige Schlingpflanze; bis 4 m breit, 6 – 10m hoch/lang, bildet keinen Stamm und zieht sich im Herbst/Winter zurück"},
+													{"caption": "Blätter", "data": "weinrebenähnlich, mittelgrün, herzförmig, handgroß und gegenständig um den Spross angeordnet, spitz gesägt, rauhaarig"},
+													{"caption": "Blüte", "data": "Juni – September / zapfen- bzw. ährenförmig, dezent duftend, gelb-grün"},
+													{"caption": "Frucht", "data": "August – September / nach Windbestäubung, 3 mm lang und nussähnlich"},
+													{"caption": "Fundort", "data": "grundfeuchte Standorte, Auenwälder, bevorzugt auf Lehm- und Tonböden"},
+													{"caption": "Geschmack", "data": "Triebe schmecken spinatartig; weibliche Blüten weisen typisches Bieraroma auf"},
+													{"caption": "Verwendung", "data": "Alle Pflanzenteile sind essbar. <br><b>Triebe:</b> April – Juli als Spargelgemüse, gekocht wie Spinat oder roh ausgepresst als Gemüsesaft. <br><b>Blüten:</b> weibliche Blüten und Fruchtzapfen ergeben von Juli – August die typische Bierwürze; Zubereitung als Tee oder Spirituose <br> Männliche Blüten von Juli – August als zartes Gemüse <br> <b>Wurzeln:</b> ab September als Pfannen-, Koch- oder Backgemüse"}]},
+				  {"k": "Gut zu wissen", "v": "text"},
+				  {"k": "Mehr Infos", "v": "text"},
+
+				  {"k": "Quellen", "v": [{"caption": "Foto", "source": "Bildquelle <i>(Bild muss noch gemacht werden)</i>"},
+											{"caption": "Literatur", "source": "Quelle Buch"}
+											]}	 
+	 ],
+	 "order": "10",
+	 "image_path": "no",
+	 "image_text": "",
+	 "point": { "type": "Feature", "properties": { "id": 10, "order":"10", "type":"station-essbar" }, "geometry": { "type": "Point", "coordinates": [ 13.704185658262277, 51.023717033241212 ] } }
+	 
+	},
+		
+	
+	
+	
+	{"title_long": "Name Lang",
+	 "title_short": "Station",
+	 "content": [ 
+	              {"k": "Was kann ich hier essen?", "v": "text"},	 
+	              {"k": "Informationen", "v": "[1] [2] "},
+
+
+				  {"k": "Quellen", "v": [{"caption": "Foto", "source": "URL 1"}, 
+												{"caption": "1", "source": "URL 1"},
+												{"caption": "2", "source": "URL 2"}
+
+												]}	 
+	 ],
+	 "order": "11",
+	 "image_path": "",
+	 "image_text": "",
+	 "point": { "type": "Feature", "properties": { "id": 11, "order":"11", "type":"station-poi" }, "geometry": { "type": "Point", "coordinates": [ 13.703750124206143, 51.022484216333062 ] } }
+	 
+	},	
+	
+	
+	{"title_long": "Name Lang",
+	 "title_short": "Station",
+	 "content": [ 
+	              {"k": "Was kann ich davon essen?", "v": "xxx"},
+				  {"k": "Steckbrief", "v": [{"caption": "Deutscher Name", "data": "Süßkirsche, Vogelkirsche "}, 
+													{"caption": "Lateinischer Name", "data": "Prunus avium"}, 
+													{"caption": "Merkmale", "data": "15-20m hoher Baum, Kronenbreite 10 – 15m, dünne Rindenstreifen lösen sich waagrecht ab, Ringelborke"},
+													{"caption": "Blätter", "data": "länglich, eiförmig, gezähnt, mattgrün, Herbstfärbung gelb bis rot"},
+													{"caption": "Blüte", "data": "April – Mai / weiß, doldiger Blütenstand mit 3 – 4 Blüten"},
+													{"caption": "Frucht", "data": "Juni – Juli / je nach Sorte gelblich bis schwarzrot, kugelige Steinfrüchte"},
+													{"caption": "Fundort", "data": "in Parkanlagen, Alleen, Hecken, Gärten, an Waldrändern"},
+													{"caption": "Geschmack", "data": "weich, süß, saftig; Wildform bitter-süß und weniger saftig"},
+													{"caption": "Verwendung", "data": "<b>Früchte:<b> frisch als Naschfrucht, in Desserts, eingekocht als Konfitüre, Likör, Saft, Gelee; <br><b>Kern:</b> in Kirschkernkissen"}]},
+				  {"k": "Gut zu wissen", "v": "xxx [1]."},
+				  {"k": "Mehr Infos", "v": "xxx"},
+	
+
+				  {"k": "Quellen", "v": [{"caption": "Foto", "source": "Bildquelle <i>(Bild muss noch gemacht werden)</i>"},
+											{"caption": "1", "source": "URL 1"}
+											]}	 
+	 ],
+	 "order": "12",
+	 "image_path": "no",
+	 "image_text": "Bild Untertitel",
+	 "point": { "type": "Feature", "properties": { "id": 12, "order":"12", "type":"station-essbar" }, "geometry": { "type": "Point", "coordinates": [ 13.703685481697633, 51.02289156706221 ] } }
+	 
+	},	
+	
+	
+	{"title_long": "Name Lang",
+	 "title_short": "Station",
+	 "content": [ 
+	              {"k": "Was kann ich hier essen?", "v": "xxx"},
+	              {"k": "Informationen", "v": "[1]. [2]"},
+
+				  {"k": "Quellen", "v": [{"caption": "Foto", "source": "Quelle Bild"}, 
+												{"caption": "1", "source": "URL 1"},
+												{"caption": "2", "source": "URL 2"}]}	 
+	 ],
+	 "order": "13",
+	 "image_path": "",
+	 "image_text": "xxx",
+	 "point": { "type": "Feature", "properties": { "id": 13, "order":"13", "type":"station-poi" }, "geometry": { "type": "Point", "coordinates": [ 13.711027336734231, 51.022912558256003 ] } }
+	 
+	},
+
+	{"title_long": "Name Lang",
+	 "title_short": "Station",
+	 "content": [ 
+	              {"k": "Was kann ich davon essen?", "v": "<b>Blätter:</b> xxx <br><b>Früchte:</b> xxx"},
+				  {"k": "Steckbrief", "v": [{"caption": "Deutscher Name", "data": "Himbeere"}, 
+													{"caption": "Lateinischer Name", "data": "Rubus idaeus"}, 
+													{"caption": "Merkmale", "data": "60 – 150 cm hoher Strauch, Ruten aufrecht mit feinen Stacheln, sommergrün"},
+													{"caption": "Blätter", "data": "mind. 3 eiförmige Fiederblätter, am Rand gesägt, unterseits weißer Filz"},
+													{"caption": "Blüte", "data": "Mai – Aug. / unauffällig, rispige Blütenstände, 5 weiße Kronblätter"},
+													{"caption": "Frucht", "data": "Juni – Sept. / rote Sammelfrüchte, kann leicht abgezogen werden, Erntezeit je nach Sorte"},
+													{"caption": "Fundort", "data": "an Waldrändern und Gebüschsäumen, in Parks und Gärten"},
+													{"caption": "Geschmack", "data": "süßlich, aromatisch, leicht säuerlich"},
+													{"caption": "Verwendung", "data": "<b>Blätter:</b> getrocknet als Tee, jung als Salat <br><b>Früchte:</b> frisch als Naschfrucht, für Desserts, Likör; eingekocht als Konfitüre, Saft, Sirup, Kompott"}]},
+				  {"k": "Gut zu wissen", "v": "xxx [1]."},
+				  {"k": "Mehr Infos", "v": "xxx"},
+
+
+				  {"k": "Quellen", "v": [{"caption": "Foto", "source": "Bildquelle <i>(Bild muss noch gemacht werden)</i>"},
+											{"caption": "1", "source": "URL 1"}]}	 
+	 ],
+	 "order": "14",
+	 "image_path": "no",
+	 "image_text": "",
+	 "point": { "type": "Feature", "properties": { "id": 14, "order":"14", "type":"station-essbar" }, "geometry": { "type": "Point", "coordinates": [ 13.710139164830492, 51.022738353701357 ] } }
+	 
+	},
+
+
+
+	{"title_long": "Name Lang",
+	 "title_short": "Station",
+	 "content": [ 
+	              {"k": "Was kann ich davon essen?", "v": "xxx"},
+				  {"k": "Steckbrief", "v": [{"caption": "Deutscher Name", "data": "Traubenkirsche"}, 
+													{"caption": "Lateinischer Name", "data": "Prunus padus"}, 
+													{"caption": "Merkmale", "data": "meist mehrstämmiger, sommergrüner Großstrauch oder Baum mit leicht bogig überhängenden Ästen, bis ca. 10 – 15 m hoch"},
+													{"caption": "Blätter", "data": "wechselständig an kurzen Stielen am Zweig. Sie sind an der Oberseite dunkelgrün und matt und an der Unterseite graugrün, leicht behaart und verkehrt eiförmig bis breit lanzettlich. Der Blattrand ist fein gesägt. Im Herbst färbt sich das Laub gelbrot."},
+													{"caption": "Blüte", "data": "April – Mai / einfache kleine, weiße Blüten in vielblütigen Trauben, strenger Geruch"},
+													{"caption": "Frucht", "data": "August – September / bis 1 cm dicke, kugelige schwarze glänzende Steinfrüchte "},
+													{"caption": "Fundort", "data": "in Parkanlagen, Gärten, an Wasserläufen"},
+													{"caption": "Geschmack", "data": "bittersüß bis herb "},
+													{"caption": "Verwendung", "data": "Frucht als Saft, für Mischmarmeladen und Essig "}]},
+				  {"k": "Gut zu wissen", "v": "xxx [1]."},
+				  {"k": "Mehr Infos", "v": "xxx [2]."},
+
+
+				  {"k": "Quellen", "v": [{"caption": "Foto", "source": "Bildqelle <i>(Bild muss noch gemacht werden)</i>"},
+											{"caption": "1", "source": "URL 1"},
+											{"caption": "2", "source": "URL 2"}]}	 
+	 ],
+	 "order": "15",
+	 "image_path": "no",
+	 "image_text": "",
+	 "point": { "type": "Feature", "properties": { "id": 15, "order":"15", "type":"station-essbar" }, "geometry": { "type": "Point", "coordinates": [ 13.710869045266621, 51.022689794291274 ] } }
+	 
+	},	
+	
+	
+		
+	
+	
+	{"title_long": "Name Lang",
+	 "title_short": "Station",
+	 "content": [ 
+	              {"k": "Was kann ich davon essen?", "v": "<b>Blüten:</b> xxx  <br><b>Früchte:</b> xxx"},
+				  {"k": "Steckbrief", "v": [{"caption": "Deutscher Name", "data": "Kornelkirsche"}, 
+													{"caption": "Lateinischer Name", "data": "Cornus mas"}, 
+													{"caption": "Merkmale", "data": "ein 2-6m hoher Strauch oder kleiner Baum, sparrig verzweigt, junge Triebe fein behaart"},
+													{"caption": "Blätter", "data": "eiförmige Blätter, 4-10cm lang, lang gestielt, mit meist 4 bogenförmig zusammenlaufenden Adern"},
+													{"caption": "Blüte", "data": "Februar - April / kleine gelbe, kugelige Dolden, vor dem Blattaustrieb, schwacher Honigduft"},
+													{"caption": "Frucht", "data": "August – Oktober / je nach Sorte rot oder gelb, oval, Größe und Form ähnlich Oliven"},
+													{"caption": "Fundort", "data": "Gebüschsäume, Hecken, Parkanlagen, lichte Laubmischwälder"},
+													{"caption": "Geschmack", "data": "süßsauer, erinnert an eine Mischung aus Johannisbeeren, Kirschen und Himbeeren"},
+													{"caption": "Verwendung", "data": "Blüten: für Tee, zum Aromatisieren von z.B. Spirituosen / Früchte: gekocht als Konfitüre, Gelee, Kompott, Kuchen, Saft, Schnaps, Eis / als Naschobst nach Erreichern der Vollreife"}]},
+				  {"k": "Gut zu wissen", "v": "xxx [1]"},
+				  {"k": "Mehr Infos", "v": "xxx [2]"},
+				  {"k": "Rezept", "v": "xxx"},
+
+				  {"k": "Quellen", "v": [{"caption": "Foto", "source": "Bildquelle"},
+											{"caption": "1", "source": "URL 1"},
+											{"caption": "2", "source": "uRL 2"}]}	 
+	 ],
+	 "order": "16",
+	 "image_path": "",
+	 "image_text": "xxx ",
+	 "point": { "type": "Feature", "properties": { "id": 16, "order":"16", "type":"station-essbar" }, "geometry": { "type": "Point", "coordinates": [ 13.710984369079704, 51.023009709168662 ] } }
+	 
+	},
+
+
+
+	{"title_long": "Name Lang",
+	 "title_short": "Station",
+	 "content": [ 
+	              {"k": "Was kann ich davon essen?", "v": "xxx"},
+				  {"k": "Steckbrief", "v": [{"caption": "Deutscher Name", "data": "Alpen-Johannisbeere, Berg-Johannisbeere "}, 
+													{"caption": "Lateinischer Name", "data": "Ribes alpinum"}, 
+													{"caption": "Merkmale", "data": "sommergrüner, aufrechter Strauch, 1 bis 2 m hoch"},
+													{"caption": "Blätter", "data": "wechselständig, rundlich, gezahnt, 3 – 5-lappig, bis 5 cm lang, wachsen in dichten Büscheln an kurzen Trieben"},
+													{"caption": "Blüte", "data": "April – Mai / grüngelben, unscheinbaren Blütentrauben"},
+													{"caption": "Frucht", "data": "Juni – Juli / rote, runde Beeren"},
+													{"caption": "Fundort", "data": "lichte Laubwälder, Hecken und Parkanlagen"},
+													{"caption": "Geschmack", "data": "wenig geschmacksintensiv, mild, etwas säuerlich; Blätter und Blüten erinnern an Champignons"},
+													{"caption": "Verwendung", "data": "<b>Früchte:</b> Juli als Limonade, Fruchtsaft, als Gelee, Marmelade, Beigabe zu Kompott oder Chutneys, in Salaten, als Trockenobst, Grüne Beeren können im Juni würzig eingelegt werden <br><b>Blüten, Blütenknospen, Blätter: </b> als Tee, März bis April als Salatgrundlage, fein geschnitten in Suppe oder als Füllung von Teigtaschen"}]},
+				  {"k": "Gut zu wissen", "v": "xxx"},
+				  {"k": "Mehr Infos", "v": "xxx"},
+
+
+				  {"k": "Quellen", "v": [{"caption": "Foto", "source": "Bildquelle <i>(Bild muss noch gemacht werden)</i>"},
+											{"caption": "Literatur", "source": "Buchquelle"}]}	 
+	 ],
+	 "order": "17",
+	 "image_path": "no",
+	 "image_text": "xxx",
+	 "point": { "type": "Feature", "properties": { "id": 17, "order":"17", "type":"station-essbar" }, "geometry": { "type": "Point", "coordinates": [ 13.71099016727308, 51.027726069205301 ] } }
+	 
+	},
+	
+	
+	
+	{"title_long": "Name Lang",
+	 "title_short": "Station",
+	 "content": [ {"k": "Informationen", "v": "xxx [1]."},
+
+				  {"k": "Quellen", "v": [{"caption": "Foto", "source": "Bildquelle <i>(Bild muss noch gemacht werden)</i>"}, 
+												{"caption": "1", "source": "Quelle"}]}	 
+	 ],
+	 "order": "18",
+	 "image_path": "no",
+	 "image_text": "",
+	 "point": { "type": "Feature", "properties": { "id": 18, "order":"18", "type":"station-poi" }, "geometry": { "type": "Point", "coordinates": [ 13.709881386239992, 51.028639901913252 ] } }
+	 
+	}
+
+
+
+
+
+
+	
+	
+
+
+	]
+	
+	
+}

@@ -1,0 +1,404 @@
+/* wichtig: import anderer CSS immer mit Tilde ~ arbeiten! */
+
+
+/* Bootstrap stylesheets */
+/*@import '/code/node_modules/bootstrap/dist/css/bootstrap.css';
+@import '~bootstrap/dist/css/bootstrap.min.css'; */
+
+/* framework7 CSS */
+/*@import '/code/node_modules/framework7/css/framework7.bundle.min.css'; */
+
+
+@import '~ol/ol.css';
+
+@import 'my_app.css';
+
+/*@import 'framework7-icons.css'; */
+
+
+
+
+/* #map {  */
+  /* configure the size of the map */
+
+
+  /* width: 100%; */
+  /* height: 60% !important; */
+  /* height: 100%; */
+/* }  */
+
+
+
+
+
+.btn_route_close {
+  /* border-style: solid;
+  border-color: red; */
+  /* background-color: red; */
+  background-color: #ffd102;
+}
+
+
+.section-map {
+  height: 60%;
+  /* Achtung: wird durch event ueberschrieben! */
+  margin: 0 0 0 0;
+  width: 100%;
+  /* display: block; */
+
+
+
+
+}
+
+.section-footer{
+  height: 40%;
+  /* Achtung: wird durch event ueberschrieben! */
+  margin: 0 0 0 0;
+}
+.section-footer-content{
+  height: 60%;
+  background-color: #75CA42;
+  margin: 0 0 0 0;
+
+  /* how can the border placed inside of div container? */
+  /* border: 2px solid white; */
+}
+.section-footer-swiper{
+  height: 40%;
+  margin: 0 0 0 0;
+}
+
+
+
+
+/* Limit resizable panel width */
+.panel {
+  /* min-width: 140px;  */
+  width: 50%;
+  /* max-width: 90vw; */
+} 
+
+/* css fuer navbar */
+.menu-class {
+  min-width: 80px;
+  max-width: 70vw;
+}
+
+/* spacing between elements of appbar */
+.right > a {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+
+/* CSS for openlayers controls color */
+.ol-control button{ 
+  background-color:  #75CA42  !important;
+}
+.ol-scale-line {
+  /*
+  position: absolute;
+  width: auto;
+  bottom: 0.25em;
+  left: 88%;
+  color: red; */
+  background: #75CA42;
+  /*
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 2px;
+  border: 1.5px solid #703841ff;
+  */
+  }
+
+  /* Zoom Buttons ol */
+  .ol-zoom button, .ol-zoom button:hover {
+    height: 40px !important;
+    width: 40px !important;
+    padding: 10 px !important;
+  }
+
+   /* fuer die Buttons auf der map */
+  .map-buttons {
+
+    position: absolute;
+    z-index: 99;
+    left: 0px;
+    top: 0px;
+  }
+
+
+  /* to align some buttons etc to the right... see settings button */
+  .div-right {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+  }
+
+
+/*@import '/code/src/index-Dateien/navbar-top.css'; */
+
+/*<link rel="stylesheet" href="/code/node_modules/ol/ol.css" type="text/css">*/
+/*<link href="index-Dateien/bootstrap.css" rel="stylesheet">*/
+/*<link href="index-Dateien/navbar-top.css" rel="stylesheet">*/
+
+/* Open Layers */
+/*html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}*/
+
+
+/* overwrite margin between navbar and map --> no space */
+/* ein !important wird hier ueberschrieben */
+/*.mb-4, .my-4 {
+  margin-bottom: 0em !important;
+
+
+}
+*/
+
+/*body {
+  margin-top: 2em;
+}*/
+
+
+
+/* toolbar tabbar ... footer for route */
+
+.my_footer{
+  /* CHANGE to make top-row unvisible */
+  /* height: 80px !important; */
+  height: 50px !important;
+}
+.row-top{
+  /* CHANGE to make top-row unvisible */
+  /* max-height: 30px ; */
+  max-height: 0px ;
+  bottom: 50px ;
+  /* top: auto; */
+  top: 0 !important;
+  
+  /* '!important' command is required to enforce new sizes */
+}
+
+.row-bottom{
+  max-height: 50px !important;
+  bottom: 0 !important;
+  /* top: auto; */
+
+  /* CHANGE to make top-row unvisible */
+  /* top: 30px !important; */
+  top: 0px !important;
+
+
+  
+  /* '!important' command is required to enforce new sizes */
+}
+
+
+
+
+.my_tabbar {
+  position: absolute;
+  height: 30px;
+  top: 0;
+  background: #75CA42;
+  width: 100%;
+  text-align: center;
+  line-height: 30px;
+}
+
+.my_tabbar span {
+  font-size: 12px;
+}
+
+/* CSS for center field/ button in top row of toolbar */
+
+.toolbar-top-center-field {
+  width: 60% !important;
+  /* color: #75CA42 !important; */
+  color: rgba(0, 0, 0, 0.5) !important;
+  
+  background-color: #ffd102 !important;
+  font-weight: bold !important;
+}
+
+.toolbar-top-notcenter-field {
+  /* background-color: #ffd102 !important; */
+  background-color: #75CA42 !important;
+  width: 20% !important;
+}
+
+
+
+
+
+
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 15px;
+  background:#75CA42;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+
+.slide-route {
+
+  /* font color */
+  color: rgba(0, 0, 0, 0.5) !important;
+
+
+  /* border for each slide in route*/
+
+  /* border-left: 4px solid #fff !important;
+  border-right: 4px solid #fff !important; */
+
+  /* IMPORTANT: --> border causes that active slide will not be centered anymore!!! better: use SpaceBetweenSlides */
+
+  /* border-style: solid !important;
+  border-width: 2px !important;
+  border-color: rgba(0, 0, 0, 0.5) !important; */
+
+  /* auto width, because text length of each station ist different */
+  width: auto !important;
+
+  /* some additional inner space left and right next to the text */
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+
+
+
+
+
+.swiper-slide-active {
+  background:#ffd102;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  /* background:#ffd102;   */
+  color:#ffd102;  
+}
+
+.swiper-pagination-bullet {
+  width: 5px;
+  height: 5px;
+  text-align: center;
+  line-height: 5px;
+  font-size: 12px;
+  color: #000;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.swiper-pagination-bullet-active {
+  color: #fff;
+  background: #75CA42;
+}
+
+
+
+
+
+
+
+/* for SHEET MODAL */
+
+/* offset to not cover toolbar! */
+.sheet-station {
+
+  /* CHANGE to make top-row unvisible */
+  /* bottom: 80px !important; */
+  bottom: 50px !important;
+}
+
+
+/* for ACCORDION of 'route' */
+/* for hover ... here using .route-category is not possible */
+
+.route-item:hover .route-category .item-inner .item-title {
+
+  /* only for title when hovered */
+  font-weight: bold !important; 
+}
+
+.route-item:hover .route-category {
+
+  background-color: #75CA42 !important;
+ 
+}
+
+.route-category {
+  font-size:13px !important;
+  text-align: center !important;
+  /* over-flow:auto; */
+  white-space: auto !important;
+
+  background-color: #ffd102 !important;
+
+}
+
+
+.route-content {
+
+  font-size:12px !important;
+  /* margin-top: 0; */
+  /* over-flow:auto; */
+  white-space: auto !important;
+
+  /* Blocksatz */
+  text-align: justify !important;
+}
+
+.route-accordion {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.route-page {
+  /* background color in bright yellow?? */
+  background-color: #fff1b3 !important;
+}
+
+
+
+/* HTML TABLE for Steckbrief */
+
+.table-steckbrief {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+
+.tr-with-bottom-line {
+  border-bottom: 1px solid #75CA42;
+}
+
+
+/* HTML TABLE for Quellen */
+
+
+.td-quellen {
+  font-weight: bold !important;
+}

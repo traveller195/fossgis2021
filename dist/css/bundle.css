@@ -1,0 +1,1174 @@
+.ol-box {
+  box-sizing: border-box;
+  border-radius: 2px;
+  border: 2px solid blue;
+}
+
+.ol-mouse-position {
+  top: 8px;
+  right: 8px;
+  position: absolute;
+}
+
+.ol-scale-line {
+  background: rgba(0,60,136,0.3);
+  border-radius: 4px;
+  bottom: 8px;
+  left: 8px;
+  padding: 2px;
+  position: absolute;
+}
+.ol-scale-line-inner {
+  border: 1px solid #eee;
+  border-top: none;
+  color: #eee;
+  font-size: 10px;
+  text-align: center;
+  margin: 1px;
+  will-change: contents, width;
+}
+.ol-overlay-container {
+  will-change: left,right,top,bottom;
+}
+
+.ol-unsupported {
+  display: none;
+}
+.ol-viewport, .ol-unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.ol-selectable {
+  -webkit-touch-callout: default;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+.ol-grabbing {
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+  cursor: grabbing;
+}
+.ol-grab {
+  cursor: move;
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: grab;
+}
+.ol-control {
+  position: absolute;
+  background-color: rgba(255,255,255,0.4);
+  border-radius: 4px;
+  padding: 2px;
+}
+.ol-control:hover {
+  background-color: rgba(255,255,255,0.6);
+}
+.ol-zoom {
+  top: .5em;
+  left: .5em;
+}
+.ol-rotate {
+  top: .5em;
+  right: .5em;
+  transition: opacity .25s linear, visibility 0s linear;
+}
+.ol-rotate.ol-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .25s linear, visibility 0s linear .25s;
+}
+.ol-zoom-extent {
+  top: 4.643em;
+  left: .5em;
+}
+.ol-full-screen {
+  right: .5em;
+  top: .5em;
+}
+@media print {
+  .ol-control {
+    display: none;
+  }
+}
+
+.ol-control button {
+  display: block;
+  margin: 1px;
+  padding: 0;
+  color: white;
+  font-size: 1.14em;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  height: 1.375em;
+  width: 1.375em;
+  line-height: .4em;
+  background-color: rgba(0,60,136,0.5);
+  border: none;
+  border-radius: 2px;
+}
+.ol-control button::-moz-focus-inner {
+  border: none;
+  padding: 0;
+}
+.ol-zoom-extent button {
+  line-height: 1.4em;
+}
+.ol-compass {
+  display: block;
+  font-weight: normal;
+  font-size: 1.2em;
+  will-change: transform;
+}
+.ol-touch .ol-control button {
+  font-size: 1.5em;
+}
+.ol-touch .ol-zoom-extent {
+  top: 5.5em;
+}
+.ol-control button:hover,
+.ol-control button:focus {
+  text-decoration: none;
+  background-color: rgba(0,60,136,0.7);
+}
+.ol-zoom .ol-zoom-in {
+  border-radius: 2px 2px 0 0;
+}
+.ol-zoom .ol-zoom-out {
+  border-radius: 0 0 2px 2px;
+}
+
+
+.ol-attribution {
+  text-align: right;
+  bottom: .5em;
+  right: .5em;
+  max-width: calc(100% - 1.3em);
+}
+
+.ol-attribution ul {
+  margin: 0;
+  padding: 0 .5em;
+  font-size: .7rem;
+  line-height: 1.375em;
+  color: #000;
+  text-shadow: 0 0 2px #fff;
+}
+.ol-attribution li {
+  display: inline;
+  list-style: none;
+  line-height: inherit;
+}
+.ol-attribution li:not(:last-child):after {
+  content: " ";
+}
+.ol-attribution img {
+  max-height: 2em;
+  max-width: inherit;
+  vertical-align: middle;
+}
+.ol-attribution ul, .ol-attribution button {
+  display: inline-block;
+}
+.ol-attribution.ol-collapsed ul {
+  display: none;
+}
+.ol-attribution:not(.ol-collapsed) {
+  background: rgba(255,255,255,0.8);
+}
+.ol-attribution.ol-uncollapsible {
+  bottom: 0;
+  right: 0;
+  border-radius: 4px 0 0;
+  height: 1.1em;
+  line-height: 1em;
+}
+.ol-attribution.ol-uncollapsible img {
+  margin-top: -.2em;
+  max-height: 1.6em;
+}
+.ol-attribution.ol-uncollapsible button {
+  display: none;
+}
+
+.ol-zoomslider {
+  top: 4.5em;
+  left: .5em;
+  height: 200px;
+}
+.ol-zoomslider button {
+  position: relative;
+  height: 10px;
+}
+
+.ol-touch .ol-zoomslider {
+  top: 5.5em;
+}
+
+.ol-overviewmap {
+  left: 0.5em;
+  bottom: 0.5em;
+}
+.ol-overviewmap.ol-uncollapsible {
+  bottom: 0;
+  left: 0;
+  border-radius: 0 4px 0 0;
+}
+.ol-overviewmap .ol-overviewmap-map,
+.ol-overviewmap button {
+  display: inline-block;
+}
+.ol-overviewmap .ol-overviewmap-map {
+  border: 1px solid #7b98bc;
+  height: 150px;
+  margin: 2px;
+  width: 150px;
+}
+.ol-overviewmap:not(.ol-collapsed) button{
+  bottom: 1px;
+  left: 2px;
+  position: absolute;
+}
+.ol-overviewmap.ol-collapsed .ol-overviewmap-map,
+.ol-overviewmap.ol-uncollapsible button {
+  display: none;
+}
+.ol-overviewmap:not(.ol-collapsed) {
+  background: rgba(255,255,255,0.8);
+}
+.ol-overviewmap-box {
+  border: 2px dotted rgba(0,60,136,0.7);
+}
+
+.ol-overviewmap .ol-overviewmap-box:hover {
+  cursor: move;
+}
+
+/* Custom color theme */
+:root {
+  --f7-theme-color: #75CA42;
+  --f7-theme-color-rgb: 117, 202, 66;
+  --f7-theme-color-shade: #62b132;
+  --f7-theme-color-tint: #8cd362;
+}
+/* Invert navigation bars to fill style */
+:root,
+:root.theme-dark,
+:root .theme-dark {
+  --f7-bars-bg-color: var(--f7-theme-color);
+  --f7-bars-bg-color-rgb: var(--f7-theme-color-rgb);
+  --f7-bars-translucent-opacity: 0.9;
+  --f7-bars-text-color: #fff;
+  --f7-bars-link-color: #fff;
+  --f7-navbar-subtitle-text-color: rgba(255,255,255,0.85);
+  --f7-bars-border-color: transparent;
+  --f7-tabbar-link-active-color: #fff;
+  --f7-tabbar-link-inactive-color: rgba(255,255,255,0.54);
+  --f7-sheet-border-color: transparent;
+  --f7-tabbar-link-active-border-color: #fff;
+}
+.appbar,
+.navbar,
+.toolbar,
+.subnavbar,
+.calendar-header,
+.calendar-footer {
+  --f7-touch-ripple-color: var(--f7-touch-ripple-white);
+  --f7-link-highlight-color: var(--f7-link-highlight-white);
+  --f7-button-text-color: #fff;
+  --f7-button-pressed-bg-color: rgba(255,255,255,0.1);
+}
+.navbar-large-transparent,
+.navbar-large.navbar-transparent {
+  --f7-navbar-large-title-text-color: #000;
+
+  --r: 117;
+  --g: 202;
+  --b: 66;
+  --progress: var(--f7-navbar-large-collapse-progress);
+  --f7-bars-link-color: rgb(
+    calc(var(--r) + (255 - var(--r)) * var(--progress)),
+    calc(var(--g) + (255 - var(--g)) * var(--progress)),
+    calc(var(--b) + (255 - var(--b)) * var(--progress))
+  );
+}
+.theme-dark .navbar-large-transparent,
+.theme-dark .navbar-large.navbar-transparent {
+  --f7-navbar-large-title-text-color: #fff;
+}
+
+
+/* appbar */
+:root {
+  /*
+  --f7-appbar-offset: var(--f7-appbar-height);
+  --f7-appbar-extra-offset: 0px;
+  --f7-appbar-bg-color: var(--f7-bars-bg-color);
+  --f7-appbar-bg-color-rgb: var(--f7-bars-bg-color-rgb);
+  --f7-appbar-bg-image: var(--f7-bars-bg-image);
+  --f7-appbar-border-color: var(--f7-bars-border-color);
+  --f7-appbar-link-color: var(--f7-bars-link-color);
+  --f7-appbar-text-color: var(--f7-bars-text-color);
+  */
+  --f7-appbar-shadow-image: none;
+}
+.ios {
+  --f7-appbar-height: 44px;
+  --f7-appbar-inner-padding-left: 8px;
+  --f7-appbar-inner-padding-right: 8px;
+}
+.md {
+  --f7-appbar-height: 48px;
+  --f7-appbar-inner-padding-left: 16px;
+  --f7-appbar-inner-padding-right: 16px;
+}
+.aurora {
+  /* --f7-appbar-height: 38px; */
+  --f7-appbar-height: 45px;
+  --f7-appbar-inner-padding-left: 16px;
+  --f7-appbar-inner-padding-right: 16px;
+}
+
+/* toggle zB bei Settings */
+
+:root {
+  --f7-toggle-handle-color: #fff;
+}
+:root .theme-dark,
+:root.theme-dark {
+  --f7-toggle-inactive-color: #555;
+}
+.ios {
+  --f7-toggle-width: 52px;
+  --f7-toggle-height: 32px;
+  --f7-toggle-border-color: #e5e5e5;
+  --f7-toggle-inactive-color: #fff;
+}
+.ios .theme-dark,
+.ios.theme-dark {
+  --f7-toggle-border-color: #555;
+}
+.md {
+  --f7-toggle-width: 36px;
+  --f7-toggle-height: 14px;
+  --f7-toggle-inactive-color: #b0afaf;
+}
+.aurora {
+  --f7-toggle-width: 40px;
+  --f7-toggle-height: 20px;
+  --f7-toggle-inactive-color: #aaa;
+}
+
+
+/* for panels */
+.panel {
+  min-width: 100px;
+  max-width: 90vw;
+}
+
+
+
+/* A bit of demo styles for swiper slider */
+/* .demo-swiper .swiper-slide { */
+  /* font-size: 20px; */
+  /* font-weight: 300; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* background: #fff; */
+  /* background: #ecf9ec; */
+  /* color:  #75CA42; */
+/* } */
+/* .demo-swiper .swiper-slide { */
+  /* box-sizing: border-box; */
+  /* border: 1px solid #ddd; */
+  /* background: #fff; */
+  /* background: #ecf9ec; */
+/* } */
+/* .demo-swiper { */
+  /* margin: 0px 0 35px; */
+  /* margin: 0 0 0 0; */
+  /* font-size: 18px; */
+  /* height: 120px; */
+  /* height: 100%; */
+/* } */
+/* .demo-swiper.demo-swiper-auto .swiper-slide {
+  width: 85%;
+}
+.demo-swiper.demo-swiper-auto .swiper-slide:nth-child(2n) {
+  width: 70%;
+}
+.demo-swiper.demo-swiper-auto .swiper-slide:nth-child(3n) {
+  width: 30%;
+} */
+
+
+
+
+
+
+/* for cards */
+
+
+:root {
+  --f7-card-content-padding-horizontal: 16px;
+  --f7-card-content-padding-vertical: 16px;
+  --f7-card-border-radius: 4px;
+  --f7-card-font-size: inherit;
+  --f7-card-header-text-color: inherit;
+  --f7-card-header-font-weight: 400;
+  --f7-card-header-padding-horizontal: 16px;
+  --f7-card-footer-font-weight: 400;
+  --f7-card-footer-font-size: inherit;
+  --f7-card-footer-padding-horizontal: 16px;
+  --f7-card-expandable-font-size: 16px;
+  --f7-card-expandable-tablet-width: 670px;
+  --f7-card-expandable-tablet-height: 670px;
+  --f7-card-bg-color: #fff;
+  --f7-card-outline-border-color: rgba(0, 0, 0, 0.12);
+  --f7-card-header-border-color: rgba(0, 0, 0, 0.1);
+  --f7-card-footer-border-color: rgba(0, 0, 0, 0.1);
+  --f7-card-expandable-bg-color: #fff;
+}
+:root .theme-dark,
+:root.theme-dark {
+  --f7-card-bg-color: #1c1c1d;
+  --f7-card-expandable-bg-color: #1c1c1d;
+  --f7-card-outline-border-color: rgba(255, 255, 255, 0.15);
+  --f7-card-header-border-color: rgba(255, 255, 255, 0.15);
+  --f7-card-footer-border-color: rgba(255, 255, 255, 0.15);
+  --f7-card-footer-text-color: rgba(255, 255, 255, 0.55);
+}
+.ios {
+  --f7-card-margin-horizontal: 10px;
+  --f7-card-margin-vertical: 10px;
+  --f7-card-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  --f7-card-header-font-size: 17px;
+  --f7-card-header-padding-vertical: 10px;
+  --f7-card-header-min-height: 44px;
+  --f7-card-footer-text-color: rgba(0, 0, 0, 0.45);
+  --f7-card-footer-padding-vertical: 10px;
+  --f7-card-footer-min-height: 44px;
+  --f7-card-expandable-margin-horizontal: 20px;
+  --f7-card-expandable-margin-vertical: 30px;
+  --f7-card-expandable-box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3);
+  --f7-card-expandable-border-radius: 15px;
+  --f7-card-expandable-tablet-border-radius: 5px;
+  --f7-card-expandable-header-font-size: 27px;
+  --f7-card-expandable-header-font-weight: bold;
+}
+.md {
+  --f7-card-margin-horizontal: 8px;
+  --f7-card-margin-vertical: 8px;
+  --f7-card-box-shadow: var(--f7-elevation-1);
+  --f7-card-header-font-size: 16px;
+  --f7-card-header-padding-vertical: 4px;
+  --f7-card-header-min-height: 48px;
+  --f7-card-footer-text-color: rgba(0, 0, 0, 0.54);
+  --f7-card-footer-padding-vertical: 4px;
+  --f7-card-footer-min-height: 48px;
+  --f7-card-expandable-margin-horizontal: 12px;
+  --f7-card-expandable-margin-vertical: 24px;
+  --f7-card-expandable-box-shadow: var(--f7-elevation-10);
+  --f7-card-expandable-border-radius: 8px;
+  --f7-card-expandable-tablet-border-radius: 4px;
+  --f7-card-expandable-header-font-size: 24px;
+  --f7-card-expandable-header-font-weight: 500;
+}
+.aurora {
+  --f7-card-margin-horizontal: 10px;
+  --f7-card-margin-vertical: 10px;
+  --f7-card-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
+  --f7-card-header-font-size: 14px;
+  --f7-card-header-font-weight: bold;
+  --f7-card-header-padding-vertical: 10px;
+  --f7-card-header-min-height: 38px;
+  --f7-card-footer-text-color: rgba(0, 0, 0, 0.6);
+  --f7-card-footer-padding-vertical: 10px;
+  --f7-card-footer-min-height: 38px;
+  --f7-card-expandable-margin-horizontal: 10px;
+  --f7-card-expandable-margin-vertical: 20px;
+  --f7-card-expandable-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+  --f7-card-expandable-border-radius: 15px;
+  --f7-card-expandable-tablet-border-radius: 5px;
+  --f7-card-expandable-header-font-size: 27px;
+  --f7-card-expandable-header-font-weight: bold;
+}
+
+
+/* for toolbar (bottom) ... as footer */
+
+.aurora {
+  /* --f7-toolbar-height: 38px;   */
+  --f7-toolbar-height: 48px;  
+  --f7-toolbar-font-size: 14px;
+  --f7-toolbar-inner-padding-left: 16px;
+  --f7-toolbar-inner-padding-right: 16px;
+  --f7-toolbar-link-height: auto;
+  --f7-toolbar-link-line-height: inherit;
+  --f7-tabbar-labels-height: 44px;
+  --f7-tabbar-labels-tablet-height: 44px;
+  --f7-tabbar-link-inactive-bg-color: rgba(0, 0, 0, 0.2);
+  --f7-toolbar-top-shadow-image: none;
+  --f7-toolbar-bottom-shadow-image: none;
+  --f7-tabbar-icon-size: 18px;
+  --f7-tabbar-link-text-transform: none;
+  --f7-tabbar-link-font-weight: 400;
+  --f7-tabbar-link-letter-spacing: 0;
+  --f7-tabbar-label-font-size: 12px;
+  --f7-tabbar-label-tablet-font-size: 12px;
+  --f7-tabbar-label-font-weight: 500;
+  --f7-tabbar-label-letter-spacing: 0.01;
+  --f7-tabbar-link-inactive-color: rgba(0, 0, 0, 0.5);
+}
+.aurora .theme-dark,
+.aurora.theme-dark {
+  --f7-tabbar-link-inactive-color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* for button */
+
+:root {
+  --f7-button-min-width: 32px;
+  --f7-button-bg-color: transparent;
+  --f7-button-border-width: 0px;
+  /*
+  --f7-button-text-color: var(--f7-theme-color);
+  --f7-button-pressed-text-color: var(--f7-button-text-color, var(--f7-theme-color));
+  --f7-button-border-color: var(--f7-theme-color);
+  --f7-button-fill-text-color: #fff;
+  --f7-button-fill-bg-color: var(--f7-theme-color);
+  --f7-button-outline-border-color: var(--f7-theme-color);
+  */
+  --f7-button-outline-border-width: 2px;
+  --f7-button-raised-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0,0,0,0.24);
+  --f7-button-raised-pressed-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0,0,0,0.23);
+  --f7-segmented-raised-divider-color: rgba(0, 0, 0, 0.1);
+  --f7-segmented-strong-padding: 2px;
+  --f7-segmented-strong-between-buttons: 4px;
+  --f7-segmented-strong-button-font-weight: 500;
+  --f7-segmented-strong-button-active-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  --f7-segmented-strong-bg-color: rgba(0, 0, 0, 0.07);
+  --f7-segmented-strong-button-text-color: #000;
+  --f7-segmented-strong-button-pressed-bg-color: rgba(0, 0, 0, 0.07);
+  --f7-segmented-strong-button-hover-bg-color: rgba(0, 0, 0, 0.04);
+  --f7-segmented-strong-button-active-text-color: #000;
+  --f7-segmented-strong-button-active-bg-color: #fff;
+}
+:root .theme-dark,
+:root.theme-dark {
+  --f7-segmented-strong-bg-color: rgba(255, 255, 255, 0.1);
+  --f7-segmented-strong-button-pressed-bg-color: rgba(255, 255, 255, 0.04);
+  --f7-segmented-strong-button-hover-bg-color: rgba(255, 255, 255, 0.02);
+  --f7-segmented-strong-button-active-bg-color: rgba(255, 255, 255, 0.14);
+  --f7-segmented-strong-button-text-color: #fff;
+  --f7-segmented-strong-button-active-text-color: #fff;
+}
+.ios {
+  --f7-button-font-size: 13px;
+  --f7-button-height: 28px;
+  --f7-button-padding-horizontal: 10px;
+  --f7-button-border-radius: 5px;
+  --f7-button-font-weight: 600;
+  --f7-button-letter-spacing: 0;
+  --f7-button-text-transform: uppercase;
+  /*
+  --f7-button-pressed-bg-color: rgba(var(--f7-theme-color-rgb), .15);
+  --f7-button-fill-pressed-bg-color: var(--f7-theme-color-tint);
+  */
+  --f7-button-large-height: 44px;
+  --f7-button-large-font-size: 17px;
+  --f7-button-large-font-weight: 500;
+  --f7-button-large-text-transform: none;
+  --f7-button-small-height: 26px;
+  --f7-button-small-font-size: 13px;
+  --f7-button-small-font-weight: 600;
+  --f7-button-small-text-transform: uppercase;
+  --f7-button-small-outline-border-width: 2px;
+  --f7-segmented-strong-button-text-transform: none;
+  --f7-segmented-strong-button-active-font-weight: 600;
+}
+.md {
+  --f7-button-font-size: 14px;
+  --f7-button-height: 36px;
+  --f7-button-padding-horizontal: 8px;
+  --f7-button-border-radius: 4px;
+  --f7-button-font-weight: 500;
+  --f7-button-letter-spacing: 0.03em;
+  --f7-button-text-transform: uppercase;
+  /*
+  --f7-button-fill-pressed-bg-color: var(--f7-theme-color-shade);
+  */
+  --f7-button-large-height: 48px;
+  --f7-button-large-font-size: 14px;
+  --f7-button-large-font-weight: 500;
+  --f7-button-large-text-transform: uppercase;
+  --f7-button-small-height: 28px;
+  --f7-button-small-font-size: 12px;
+  --f7-button-small-font-weight: 500;
+  --f7-button-small-text-transform: uppercase;
+  --f7-button-small-outline-border-width: 2px;
+  --f7-segmented-strong-button-text-transform: uppercase;
+  --f7-segmented-strong-button-active-font-weight: 500;
+  --f7-button-pressed-bg-color: rgba(0, 0, 0, 0.1);
+}
+.md .theme-dark,
+.md.theme-dark {
+  --f7-button-pressed-bg-color: rgba(255, 255, 255, 0.1);
+}
+.aurora {
+  /*
+  --f7-button-hover-bg-color: rgba(var(--f7-theme-color-rgb), .07);
+  --f7-button-fill-hover-bg-color: var(--f7-theme-color-tint);
+  */
+  --f7-button-font-size: 14px;
+  --f7-button-height: 28px;
+  --f7-button-min-width: 24px;
+  --f7-button-padding-horizontal: 10px;
+  --f7-button-border-radius: 4px;
+  --f7-button-font-weight: 500;
+  --f7-button-letter-spacing: 0.02;
+  --f7-button-text-transform: none;
+  /*
+  --f7-button-pressed-bg-color: rgba(var(--f7-theme-color-rgb), .15);
+  --f7-button-fill-pressed-bg-color: var(--f7-theme-color-shade);
+  */
+  --f7-button-large-height: 34px;
+  --f7-button-large-font-size: 14px;
+  --f7-button-large-font-weight: 600;
+  --f7-button-large-text-transform: none;
+  --f7-button-small-height: 24px;
+  --f7-button-small-font-size: 12px;
+  --f7-button-small-font-weight: 600;
+  --f7-button-small-text-transform: none;
+  --f7-button-small-outline-border-width: 1px;
+  --f7-segmented-strong-button-text-transform: none;
+  --f7-segmented-strong-button-active-font-weight: 600;
+}
+
+
+/* CSS settings for Sheet Modal */
+
+:root {
+  --f7-sheet-height: 260px;
+  --f7-sheet-border-color: transparent;
+  --f7-sheet-transition-duration: 300ms;
+  --f7-sheet-push-border-radius: 10px;
+  --f7-sheet-push-offset: var(--f7-safe-area-top);
+  --f7-sheet-bg-color: #fff;
+}
+:root .theme-dark,
+:root.theme-dark {
+  --f7-sheet-bg-color: #202020;
+}
+.ios {
+  --f7-sheet-border-color: var(--f7-bars-border-color);
+}
+
+/* CSS Settings for Toolbar-Tabbar */
+
+:root {
+  /*
+  --f7-toolbar-bg-color: var(--f7-bars-bg-color);
+  --f7-toolbar-bg-color-rgb: var(--f7-bars-bg-color-rgb);
+  --f7-toolbar-bg-image: var(--f7-bars-bg-image);
+  --f7-toolbar-border-color: var(--f7-bars-border-color);
+  --f7-toolbar-link-color: var(--f7-bars-link-color);
+  --f7-toolbar-text-color: var(--f7-bars-text-color);
+  --f7-tabbar-link-active-color: var(--f7-theme-color);
+  */
+  --f7-tabbar-link-active-bg-color: transparent;
+  --f7-tabbar-label-text-transform: none;
+  --f7-toolbar-hide-show-transition-duration: 400ms;
+}
+.ios {
+  --f7-toolbar-height: 44px;
+  --f7-toolbar-font-size: 17px;
+  --f7-toolbar-inner-padding-left: 8px;
+  --f7-toolbar-inner-padding-right: 8px;
+  /*
+  --f7-toolbar-link-height: var(--f7-toolbar-height);
+  --f7-toolbar-link-line-height: var(--f7-toolbar-height);
+  */
+  --f7-tabbar-labels-height: 50px;
+  --f7-tabbar-labels-tablet-height: 50px;
+  --f7-toolbar-top-shadow-image: none;
+  --f7-toolbar-bottom-shadow-image: none;
+  --f7-tabbar-icon-size: 28px;
+  --f7-tabbar-link-text-transform: none;
+  --f7-tabbar-link-font-weight: 400;
+  --f7-tabbar-link-letter-spacing: 0;
+  --f7-tabbar-label-font-size: 12px;
+  --f7-tabbar-label-tablet-font-size: 14px;
+  --f7-tabbar-label-font-weight: 500;
+  --f7-tabbar-label-letter-spacing: 0.01;
+  --f7-tabbar-link-inactive-color: rgba(0, 0, 0, 0.4);
+}
+.ios .theme-dark,
+.ios.theme-dark {
+  --f7-tabbar-link-inactive-color: rgba(255, 255, 255, 0.54);
+}
+.md {
+  --f7-toolbar-height: 48px;
+  --f7-toolbar-font-size: 14px;
+  --f7-toolbar-inner-padding-left: 0px;
+  --f7-toolbar-inner-padding-right: 0px;
+  /*
+  --f7-toolbar-link-height: var(--f7-toolbar-height);
+  --f7-toolbar-link-line-height: var(--f7-toolbar-height);
+  */
+  --f7-tabbar-labels-height: 56px;
+  --f7-tabbar-labels-tablet-height: 56px;
+  /*
+  --f7-tabbar-link-active-border-color: var(--f7-theme-color);
+  */
+  --f7-toolbar-top-shadow-image: var(--f7-bars-shadow-bottom-image);
+  --f7-toolbar-bottom-shadow-image: var(--f7-bars-shadow-top-image);
+  --f7-tabbar-icon-size: 24px;
+  --f7-tabbar-link-text-transform: uppercase;
+  --f7-tabbar-link-font-weight: 500;
+  --f7-tabbar-link-letter-spacing: 0.03em;
+  --f7-tabbar-label-font-size: 14px;
+  --f7-tabbar-label-tablet-font-size: 14px;
+  --f7-tabbar-label-font-weight: 400;
+  --f7-tabbar-label-letter-spacing: 0;
+  --f7-tabbar-link-inactive-color: rgba(0, 0, 0, 0.54);
+}
+.md .theme-dark,
+.md.theme-dark {
+  --f7-tabbar-link-inactive-color: rgba(255, 255, 255, 0.54);
+}
+.aurora {
+  --f7-toolbar-height: 38px;
+  --f7-toolbar-font-size: 14px;
+  --f7-toolbar-inner-padding-left: 16px;
+  --f7-toolbar-inner-padding-right: 16px;
+  --f7-toolbar-link-height: auto;
+  --f7-toolbar-link-line-height: inherit;
+  --f7-tabbar-labels-height: 44px;
+  --f7-tabbar-labels-tablet-height: 44px;
+  --f7-tabbar-link-inactive-bg-color: rgba(0, 0, 0, 0.2);
+  --f7-toolbar-top-shadow-image: none;
+  --f7-toolbar-bottom-shadow-image: none;
+  --f7-tabbar-icon-size: 18px;
+  --f7-tabbar-link-text-transform: none;
+  --f7-tabbar-link-font-weight: 400;
+  --f7-tabbar-link-letter-spacing: 0;
+  --f7-tabbar-label-font-size: 12px;
+  --f7-tabbar-label-tablet-font-size: 12px;
+  --f7-tabbar-label-font-weight: 500;
+  --f7-tabbar-label-letter-spacing: 0.01;
+  --f7-tabbar-link-inactive-color: rgba(0, 0, 0, 0.5);
+}
+.aurora .theme-dark,
+.aurora.theme-dark {
+  --f7-tabbar-link-inactive-color: rgba(255, 255, 255, 0.5);
+}
+/* wichtig: import anderer CSS immer mit Tilde ~ arbeiten! */
+
+
+/* Bootstrap stylesheets */
+/*@import '/code/node_modules/bootstrap/dist/css/bootstrap.css';
+@import '~bootstrap/dist/css/bootstrap.min.css'; */
+
+/* framework7 CSS */
+/*@import '/code/node_modules/framework7/css/framework7.bundle.min.css'; */
+
+/*@import 'framework7-icons.css'; */
+
+
+
+
+/* #map {  */
+  /* configure the size of the map */
+
+
+  /* width: 100%; */
+  /* height: 60% !important; */
+  /* height: 100%; */
+/* }  */
+
+
+
+
+
+.btn_route_close {
+  /* border-style: solid;
+  border-color: red; */
+  /* background-color: red; */
+  background-color: #ffd102;
+}
+
+
+.section-map {
+  height: 60%;
+  /* Achtung: wird durch event ueberschrieben! */
+  margin: 0 0 0 0;
+  width: 100%;
+  /* display: block; */
+
+
+
+
+}
+
+.section-footer{
+  height: 40%;
+  /* Achtung: wird durch event ueberschrieben! */
+  margin: 0 0 0 0;
+}
+.section-footer-content{
+  height: 60%;
+  background-color: #75CA42;
+  margin: 0 0 0 0;
+
+  /* how can the border placed inside of div container? */
+  /* border: 2px solid white; */
+}
+.section-footer-swiper{
+  height: 40%;
+  margin: 0 0 0 0;
+}
+
+
+
+
+/* Limit resizable panel width */
+.panel {
+  /* min-width: 140px;  */
+  width: 50%;
+  /* max-width: 90vw; */
+} 
+
+/* css fuer navbar */
+.menu-class {
+  min-width: 80px;
+  max-width: 70vw;
+}
+
+/* spacing between elements of appbar */
+.right > a {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+
+/* CSS for openlayers controls color */
+.ol-control button{ 
+  background-color:  #75CA42  !important;
+}
+.ol-scale-line {
+  /*
+  position: absolute;
+  width: auto;
+  bottom: 0.25em;
+  left: 88%;
+  color: red; */
+  background: #75CA42;
+  /*
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 2px;
+  border: 1.5px solid #703841ff;
+  */
+  }
+
+  /* Zoom Buttons ol */
+  .ol-zoom button, .ol-zoom button:hover {
+    height: 40px !important;
+    width: 40px !important;
+    padding: 10 px !important;
+  }
+
+   /* fuer die Buttons auf der map */
+  .map-buttons {
+
+    position: absolute;
+    z-index: 99;
+    left: 0px;
+    top: 0px;
+  }
+
+
+  /* to align some buttons etc to the right... see settings button */
+  .div-right {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+  }
+
+
+/*@import '/code/src/index-Dateien/navbar-top.css'; */
+
+/*<link rel="stylesheet" href="/code/node_modules/ol/ol.css" type="text/css">*/
+/*<link href="index-Dateien/bootstrap.css" rel="stylesheet">*/
+/*<link href="index-Dateien/navbar-top.css" rel="stylesheet">*/
+
+/* Open Layers */
+/*html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}*/
+
+
+/* overwrite margin between navbar and map --> no space */
+/* ein !important wird hier ueberschrieben */
+/*.mb-4, .my-4 {
+  margin-bottom: 0em !important;
+
+
+}
+*/
+
+/*body {
+  margin-top: 2em;
+}*/
+
+
+
+/* toolbar tabbar ... footer for route */
+
+.my_footer{
+  /* CHANGE to make top-row unvisible */
+  /* height: 80px !important; */
+  height: 50px !important;
+}
+.row-top{
+  /* CHANGE to make top-row unvisible */
+  /* max-height: 30px ; */
+  max-height: 0px ;
+  bottom: 50px ;
+  /* top: auto; */
+  top: 0 !important;
+  
+  /* '!important' command is required to enforce new sizes */
+}
+
+.row-bottom{
+  max-height: 50px !important;
+  bottom: 0 !important;
+  /* top: auto; */
+
+  /* CHANGE to make top-row unvisible */
+  /* top: 30px !important; */
+  top: 0px !important;
+
+
+  
+  /* '!important' command is required to enforce new sizes */
+}
+
+
+
+
+.my_tabbar {
+  position: absolute;
+  height: 30px;
+  top: 0;
+  background: #75CA42;
+  width: 100%;
+  text-align: center;
+  line-height: 30px;
+}
+
+.my_tabbar span {
+  font-size: 12px;
+}
+
+/* CSS for center field/ button in top row of toolbar */
+
+.toolbar-top-center-field {
+  width: 60% !important;
+  /* color: #75CA42 !important; */
+  color: rgba(0, 0, 0, 0.5) !important;
+  
+  background-color: #ffd102 !important;
+  font-weight: bold !important;
+}
+
+.toolbar-top-notcenter-field {
+  /* background-color: #ffd102 !important; */
+  background-color: #75CA42 !important;
+  width: 20% !important;
+}
+
+
+
+
+
+
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 15px;
+  background:#75CA42;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+
+.slide-route {
+
+  /* font color */
+  color: rgba(0, 0, 0, 0.5) !important;
+
+
+  /* border for each slide in route*/
+
+  /* border-left: 4px solid #fff !important;
+  border-right: 4px solid #fff !important; */
+
+  /* IMPORTANT: --> border causes that active slide will not be centered anymore!!! better: use SpaceBetweenSlides */
+
+  /* border-style: solid !important;
+  border-width: 2px !important;
+  border-color: rgba(0, 0, 0, 0.5) !important; */
+
+  /* auto width, because text length of each station ist different */
+  width: auto !important;
+
+  /* some additional inner space left and right next to the text */
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+
+
+
+
+
+.swiper-slide-active {
+  background:#ffd102;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  /* background:#ffd102;   */
+  color:#ffd102;  
+}
+
+.swiper-pagination-bullet {
+  width: 5px;
+  height: 5px;
+  text-align: center;
+  line-height: 5px;
+  font-size: 12px;
+  color: #000;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.swiper-pagination-bullet-active {
+  color: #fff;
+  background: #75CA42;
+}
+
+
+
+
+
+
+
+/* for SHEET MODAL */
+
+/* offset to not cover toolbar! */
+.sheet-station {
+
+  /* CHANGE to make top-row unvisible */
+  /* bottom: 80px !important; */
+  bottom: 50px !important;
+}
+
+
+/* for ACCORDION of 'route' */
+/* for hover ... here using .route-category is not possible */
+
+.route-item:hover .route-category .item-inner .item-title {
+
+  /* only for title when hovered */
+  font-weight: bold !important; 
+}
+
+.route-item:hover .route-category {
+
+  background-color: #75CA42 !important;
+ 
+}
+
+.route-category {
+  font-size:13px !important;
+  text-align: center !important;
+  /* over-flow:auto; */
+  white-space: auto !important;
+
+  background-color: #ffd102 !important;
+
+}
+
+
+.route-content {
+
+  font-size:12px !important;
+  /* margin-top: 0; */
+  /* over-flow:auto; */
+  white-space: auto !important;
+
+  /* Blocksatz */
+  text-align: justify !important;
+}
+
+.route-accordion {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.route-page {
+  /* background color in bright yellow?? */
+  background-color: #fff1b3 !important;
+}
+
+
+
+/* HTML TABLE for Steckbrief */
+
+.table-steckbrief {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+
+.tr-with-bottom-line {
+  border-bottom: 1px solid #75CA42;
+}
+
+
+/* HTML TABLE for Quellen */
+
+
+.td-quellen {
+  font-weight: bold !important;
+}
+
+/*# sourceMappingURL=bundle.css.map*/

@@ -1,0 +1,26 @@
+# Dies ist eine Beispieldatei für den Umgang mit der Editor-Erweiterung "REST Client".
+# Das Tool erlaubt die Definition und Abfrage von HTTP-Anfragen über ein einfaches Textdokument.
+# Anbei finden Sie ein paar Beispile unter Zuhilfename der jsonplaceholder API.
+#
+# Führen Sie die Abfragen aus, indem sie auf das Popup "Send Request" über der jeweiligen Zeile klicken.
+# Mehrere Abfragen müssen durch eine Kommentarzeile voneinander abgetrennt werden.
+# Mehr Informationen können Sie der Dokumentation des Plugins entnehmen.
+
+### Alle Posts abrufen...
+GET https://jsonplaceholder.typicode.com/posts
+Content-Type: application/json
+
+### Neuen Post anlegen...
+POST https://jsonplaceholder.typicode.com/posts
+Content-Type: application/json
+
+{
+    "title": "Test",
+    "body": "Hello, world!"
+}
+
+### Post wieder löschen...
+DELETE https://jsonplaceholder.typicode.com/posts/1
+
+### Bilder geht auch...
+GET https://via.placeholder.com/150/92c952

@@ -1,0 +1,25 @@
+[
+{   "nr": "1",
+    "title": "Sommer-Spaziergang (Testdaten)",
+    "zielgruppe": ["Kinder", "Jugendliche"],
+	"description_route": "Stadt-Stadtteil: Markusplatz --> Denkmal --> Stadtpark --> Markusplatz",
+    "length_km": "3.32",
+    "duration_min": "60",
+    "sum_elevation_up_m": "",
+    "sum_elevation_down_m": "",
+    "barrierefrei": "nein",
+	"path_GeoJSON" : ""
+},
+{   "nr": "2",
+    "title": "Herbst-Spaziergang (Testdaten)",
+    "zielgruppe": ["Kinder", "Jugendliche"],
+	"description_route": "Stadt-Stadtteil: Markusplatz --> Denkmal --> Stadtpark --> Markusplatz",
+    "length_km": "3.29",
+    "duration_min": "60",
+    "sum_elevation_up_m": "",
+    "sum_elevation_down_m": "",
+    "barrierefrei": "nein",
+	"path_GeoJSON" : ""
+}
+
+]

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+
+    <!-- favicon einbinden  -->
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Color theme for statusbar (Android only) -->
+    <meta name="theme-color" content="#75ca42">
+    <!-- Your app title -->
+    <title>ESP App</title>
+
+    <!-- Path to fr7 bundle min css file (it is not included to bundle.css)-->
+    <link rel="stylesheet" href="css/framework7.bundle.min.css">  
+    <link rel="stylesheet" href="css/framework7-icons.css">  
+
+    <!-- Path to your custom app styles-->     
+    <link rel="stylesheet" href="css/bundle.css">
+  </head>
+  <body>
+    <noscript>Please enable JavaScript, which is required for this app</noscript>
+
+    <!-- App root element -->
+    <div id="app">  
+
+      <!-- LEFT PANEL -->
+      <div class="panel panel-left panel-cover panel-init">
+        <div class="view view-init">
+          <div class="page menu-class">
+
+            <div class="navbar navbar-large navbar-transparent">
+              <div class="navbar-bg"></div>
+              <div class="navbar-inner sliding">
+                <!-- <div class="left">
+                  <a href="#" class="link back">
+                    <i class="icon icon-back"></i>
+                    <span class="if-not-md">zurück</span>
+                  </a>
+                </div> -->
+                <div class="title">Menü</div>
+                <div class="title-large">
+                  <div class="title-large-text">Menü</div>
+                </div>
+              </div>
+          </div>
+          <div class="page-content">
+    
+      <!--
+        
+          <div class="block-title">Menü</div>
+          <div class="block">
+            <p></p>
+          </div>
+          <div class="block-title">Main View Navigation</div>-->
+
+            <div class="list links-list">
+              <ul>
+                <li>
+                  <a href="/routes_list/" data-view=".view-main" class="panel-close">Spaziergänge</a>
+                </li>
+                <!-- <li>
+                  <a href="/action-sheet/" data-view=".view-main" class="panel-close">Essbares</a>
+                </li> -->
+                <li>
+                  <a href="/settings/" data-view=".view-main" class="panel-close">Einstellungen</a>
+                </li>
+
+
+                <!-- <li>
+                  <a href="/test_route/" data-view=".view-main" class="panel-close">TEST</a>
+                </li> -->
+
+
+                <!-- <li>
+                  <a href="/about/" data-view=".view-main" class="panel-close">Info+Datenquellen</a>
+                </li> -->
+                <!-- <li>
+                  <a href="/cards/" data-view=".view-main" class="panel-close">Kontakt / Feedback</a>
+                </li> -->
+                <li>
+                  <a href="/impressum/" data-view=".view-main" class="panel-close">Impressum</a>
+                </li>
+                <li>
+                  <a href="/help/" data-view=".view-main" class="panel-close">Hilfe</a>
+                </li>
+    
+              </ul>
+              <p><a class="panel-close" href="#">Schließen</a></p>
+      <!--
+              <div class="left">
+                  <a href="#" class="link back">
+                  <i class="icon icon-back"></i>
+                  <span class="if-not-md">zurück</span>
+                  </a>
+              </div>-->
+            </div>
+          </div>
+    
+          </div>
+        </div>
+      </div>
+       
+
+
+      <!-- Your main view, should have "view-main" class -->
+      <div class="view view-main safe-areas" id="view-main">
+      <!-- <div class="view view-main safe-areas" id="view-main" data-url="/"> -->
+      </div>
+    </div>
+    <!-- Path to fr7 bundle min js (not included to bundle.js)-->
+    <script type="text/javascript" src="js/framework7.bundle.min.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/bundle.js"></script>
+  </body>
+</html>
